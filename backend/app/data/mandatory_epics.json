@@ -1,0 +1,379 @@
+{
+  "mandatory_epics": [
+    {
+      "name": "Project Configuration",
+      "description": "Initial project setup and configuration",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "Set up project structure and tools",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8,
+            "CMS": 4
+          }
+        },
+        {
+          "description": "Prepare design assets for development",
+          "efforts": {
+            "Flutter": 16
+          }
+        },
+        {
+          "description": "Build layout using HTML/CSS",
+          "efforts": {
+            "Web App": 50
+          }
+        },
+        {
+          "description": "Ensure responsive design for all devices",
+          "efforts": {
+            "Web App": 50
+          }
+        }
+      ]
+    },
+    {
+      "name": "Database Design",
+      "description": "Database schema and design",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "Database scheme design",
+          "efforts": {
+            "Flutter": 32,
+            "API": 40
+          }
+        },
+        {
+          "description": "Database implementation",
+          "efforts": {
+            "Flutter": 32
+          }
+        },
+        {
+          "description": "Data caching",
+          "efforts": {
+            "Flutter": 32
+          }
+        }
+      ]
+    },
+    
+    
+    {
+      "name": "Authentication",
+      "description": "User authentication and authorization system",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "Signup with Email",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8
+          }
+        },
+        {
+          "description": "Signup with Apple ID",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 16
+          }
+        },
+        {
+          "description": "Signup with Google",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4
+          }
+        },
+        {
+          "description": "Login with email",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4,
+            "CMS": 6
+          }
+        },
+        {
+          "description": "Login with Apple ID",
+          "efforts": {
+            "Flutter": 6,
+            "Web App": 4,
+            "API": 12
+          }
+        },
+        {
+          "description": "Login with Google",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4
+          }
+        },
+        {
+          "description": "Forgot password",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4,
+            "CMS": 4
+          }
+        },
+        {
+          "description": "Reset password",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4,
+            "CMS": 4
+          }
+        },
+        {
+          "description": "OTP verification",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8
+          }
+        },
+        {
+          "description": "Resend OTP",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4
+          }
+        },
+        {
+          "description": "Mobile verification",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8
+          }
+        },
+        {
+          "description": "Email verification",
+          "efforts": {
+            "Flutter": 6,
+            "Web App": 6,
+            "API": 6
+          }
+        },
+        {
+          "description": "Manage app features depending on the user's role",
+          "efforts": {
+            "Flutter": 6,
+            "Web App": 16,
+            "API": 32
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profile Setup",
+      "description": "Initial profile setup for users",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "Setup user profile",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8
+          }
+        },
+        {
+          "description": "Setup preference details",
+          "efforts": {
+            "Flutter": 12,
+            "Web App": 8
+          }
+        },
+        {
+          "description": "Setup relevant verification document",
+          "efforts": {
+            "Flutter": 24,
+            "Web App": 12
+          }
+        }
+      ]
+    },
+    
+    
+    {
+      "name": "My Profile",
+      "description": "User profile management",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "View profile",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8
+          }
+        },
+        {
+          "description": "Update profile",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 8
+          }
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 6
+          }
+        },
+        {
+          "description": "Update email",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4
+          }
+        },
+        {
+          "description": "Update mobile number",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 6
+          }
+        },
+        {
+          "description": "Change password",
+          "efforts": {
+            "Flutter": 4,
+            "Web App": 4,
+            "API": 4
+          }
+        },
+        {
+          "description": "Logout",
+          "efforts": {
+            "Flutter": 2,
+            "Web App": 2,
+            "API": 2
+          }
+        },
+        {
+          "description": "Delete account",
+          "efforts": {
+            "Flutter": 6,
+            "Web App": 6,
+            "API": 6
+          }
+        }
+      ]
+    },
+    
+  
+    {
+      "name": "Notification",
+      "description": "Push notifications and alerts",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "Display in-app notification list",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8,
+            "CMS": 8
+          }
+        },
+        {
+          "description": "Manage read/unread status of notifications",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8,
+            "CMS": 4
+          }
+        },
+        {
+          "description": "Route users based on notification type",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 8
+          }
+        },
+        {
+          "description": "Set up push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 8,
+            "API": 12,
+            "CMS": 8
+          }
+        },
+        {
+          "description": "Handle receiving and sending push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "Web App": 16,
+            "API": 16
+          }
+        }
+      ]
+    },
+    {
+      "name": "ElasticSearch",
+      "description": "Search functionality using Elasticsearch",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "setup elastic search",
+          "efforts": {
+            "Flutter": 4,
+            "API": 16
+          }
+        },
+        {
+          "description": "fetch result from elastic search",
+          "efforts": {
+            "Flutter": 6,
+            "API": 40
+          }
+        },
+        {
+          "description": "Index search item",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          }
+        }
+      ]
+    },
+   
+    {
+      "name": "Deployment",
+      "description": "Application deployment and release",
+      "is_mandatory": true,
+      "tasks": [
+        {
+          "description": "Deployment",
+          "efforts": {
+            
+            "Web App": 8,
+            "API": 8,
+            "CMS": 8
+          }
+        }
+      ]
+    }
+  ]
+}

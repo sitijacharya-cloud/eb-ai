@@ -1,0 +1,731 @@
+{
+  "project_name": "NUC",
+  "description": "Project Objective:\nThe Nauru Utilities Corporation (NUC) seeks to develop a mobile application for both Android and iOS platforms to enhance customer engagement and improve service delivery for their utility services. The application will provide users with the ability to top-up prepaid electricity and water meters, view consumption history, receive outage notifications, and make secure payments. Additionally, the app will offer AI-driven insights such as usage predictions and abnormal consumption detection.\nPlatform:\nMobile App (Android and iOS)\nUser Types and Brief Description:\nCustomers (Residential/Commercial/Industrial/Government):\nPurpose: Users can register, top-up prepaid electricity and water meters, view consumption history, and receive real-time notifications about outages and billing alerts. The app also allows users to track their usage, manage multiple accounts, and perform secure transactions.\nAdmin\nPurpose: Admins will have access to a web-based dashboard to manage user accounts, monitor transactions, send push notifications, and generate reports related to app usage, top-ups, and outages.\nTechnical Functional Features of Each User: \nCustomer Features:\nUser Registration & Login:\nMulti-factor authentication (MFA), email/mobile number verification.\nPassword reset and recovery options.\nOne-click sign-up using mobile number or email.\nAccount Linking:\nLink electricity meters and water tank accounts using meter/account numbers.\nSupport for multiple accounts under a single user profile (e.g., multiple meters or tanks).\n",
+  "target_platforms": [
+    "Flutter",
+    "API",
+    "CMS"
+  ],
+  "epics": [
+    {
+      "name": "Project Configuration",
+      "description": "Initial project setup and configuration",
+      "tasks": [
+        {
+          "description": "Set up project structure and tools",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Prepare design assets for development",
+          "efforts": {
+            "Flutter": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Database Design",
+      "description": "Database schema and design",
+      "tasks": [
+        {
+          "description": "Database scheme design",
+          "efforts": {
+            "Flutter": 32,
+            "API": 40
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Database implementation",
+          "efforts": {
+            "Flutter": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Data caching",
+          "efforts": {
+            "Flutter": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Authentication",
+      "description": "User authentication and authorization system",
+      "tasks": [
+        {
+          "description": "Signup with Email",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Apple ID",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Apple ID",
+          "efforts": {
+            "Flutter": 6,
+            "API": 12
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Forgot password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Reset password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "OTP verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Resend OTP",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Mobile verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Email verification",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage app features depending on the user's role",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Profile Setup",
+      "description": "Initial profile setup for users",
+      "tasks": [
+        {
+          "description": "Setup user profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup preference details",
+          "efforts": {
+            "Flutter": 12
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup relevant verification document",
+          "efforts": {
+            "Flutter": 24
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "My Profile",
+      "description": "User profile management",
+      "tasks": [
+        {
+          "description": "View profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update profile",
+          "efforts": {
+            "Flutter": 4,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "Flutter": 8,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update mobile number",
+          "efforts": {
+            "Flutter": 4,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Change password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Logout",
+          "efforts": {
+            "Flutter": 2,
+            "API": 2
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Delete account",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Notification",
+      "description": "Push notifications and alerts",
+      "tasks": [
+        {
+          "description": "Display in-app notification list",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage read/unread status of notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Route users based on notification type",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Set up push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Handle receiving and sending push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "ElasticSearch",
+      "description": "Search functionality using Elasticsearch",
+      "tasks": [
+        {
+          "description": "setup elastic search",
+          "efforts": {
+            "Flutter": 4,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "fetch result from elastic search",
+          "efforts": {
+            "Flutter": 6,
+            "API": 40
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Index search item",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Deployment",
+      "description": "Application deployment and release",
+      "tasks": [
+        {
+          "description": "Deployment",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Settings & Class Management",
+      "description": "From gto100 (AI-Suggested)",
+      "tasks": [
+        {
+          "description": "Syllabus upload manage",
+          "efforts": {
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "gto100 (AI-Suggested)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "gto100 (AI-Suggested)"
+    },
+    {
+      "name": "Admin Dashboard",
+      "description": "From gto100 (AI-Suggested)",
+      "tasks": [
+        {
+          "description": "User management views",
+          "efforts": {
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "gto100 (AI-Suggested)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "gto100 (AI-Suggested)"
+    },
+    {
+      "name": "User Registration - Customer",
+      "description": "Manage user registration processes including verification.",
+      "tasks": [
+        {
+          "description": "Implement user registration with email and mobile verification",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create one-click sign-up functionality",
+          "efforts": {
+            "Flutter": 10,
+            "API": 12
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop account linking for social media logins",
+          "efforts": {
+            "Flutter": 10,
+            "API": 14
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "AI-Driven Insights",
+      "description": "Utilize AI for predictions and recommendations based on user data.",
+      "tasks": [
+        {
+          "description": "Develop usage prediction algorithms",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create a recommendation engine for energy-saving tips",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement anomaly detection for unusual consumption patterns",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Localization Support",
+      "description": "Implement multi-language support for the application.",
+      "tasks": [
+        {
+          "description": "Set up localization framework for Flutter",
+          "efforts": {
+            "Flutter": 12,
+            "API": 10
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Translate key application texts into multiple languages",
+          "efforts": {
+            "Flutter": 10,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Offline Capabilities",
+      "description": "Enable offline functionality for the application.",
+      "tasks": [
+        {
+          "description": "Implement offline data caching mechanisms",
+          "efforts": {
+            "Flutter": 16,
+            "API": 20
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop synchronization processes for offline data",
+          "efforts": {
+            "Flutter": 16,
+            "API": 20
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    }
+  ],
+  "generated_at": "2026-01-12T09:08:58.313111",
+  "analyzed_requirement": {
+    "project_name": "NUC",
+    "domain": "utilities",
+    "features": [
+      "user registration",
+      "multi-factor authentication",
+      "email/mobile number verification",
+      "password reset and recovery",
+      "one-click sign-up",
+      "account linking",
+      "link electricity meters",
+      "link water tank accounts",
+      "support for multiple accounts",
+      "top-up prepaid electricity meters",
+      "top-up prepaid water meters",
+      "view consumption history",
+      "receive outage notifications",
+      "secure payments",
+      "credit card payment",
+      "bank payment",
+      "digital wallet payment",
+      "AI-driven insights",
+      "usage prediction",
+      "consumption forecasting",
+      "recommendation engine",
+      "abnormal detection",
+      "anomaly detection",
+      "alert generation",
+      "pattern recognition",
+      "admin dashboard access",
+      "manage user accounts",
+      "monitor transactions",
+      "send push notifications",
+      "generate reports"
+    ],
+    "tech_stack": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "platforms": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "initial_epics": [
+      "User Management",
+      "Account Management",
+      "Payment System",
+      "Notifications",
+      "AI Insights",
+      "Admin Management"
+    ],
+    "epic_categories": {
+      "User Management": [
+        "user registration",
+        "multi-factor authentication",
+        "email/mobile number verification",
+        "password reset and recovery",
+        "one-click sign-up"
+      ],
+      "Account Management": [
+        "account linking",
+        "link electricity meters",
+        "link water tank accounts",
+        "support for multiple accounts"
+      ],
+      "Payment System": [
+        "top-up prepaid electricity meters",
+        "top-up prepaid water meters",
+        "secure payments",
+        "credit card payment",
+        "bank payment",
+        "digital wallet payment"
+      ],
+      "Notifications": [
+        "receive outage notifications",
+        "send push notifications"
+      ],
+      "AI Insights": [
+        "AI-driven insights",
+        "usage prediction",
+        "consumption forecasting",
+        "recommendation engine",
+        "abnormal detection",
+        "anomaly detection",
+        "alert generation",
+        "pattern recognition"
+      ],
+      "Admin Management": [
+        "admin dashboard access",
+        "manage user accounts",
+        "monitor transactions",
+        "generate reports"
+      ]
+    },
+    "complexity": "medium",
+    "user_types": [
+      "Customer",
+      "Admin"
+    ],
+    "special_requirements": [
+      "real-time notifications",
+      "secure payment integration"
+    ]
+  },
+  "total_hours": 1064
+}

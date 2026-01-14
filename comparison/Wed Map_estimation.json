@@ -1,0 +1,1943 @@
+{
+  "project_name": "Wed Map",
+  "description": "The project aims to create a wedding inspiration mobile app that serves as a map-based, Pinterest-style platform. The app will allow users to discover, save, and share wedding photo locations and inspirations. With a focus on community-based content, the app enables brides and grooms to explore real wedding photos, interact with photographers and venues, and easily share their findings with their wedding team. The platform will provide personalized content through a questionnaire at the start and will feature a public feed for discovering content. Users can follow other users and create curated feeds based on their interests, allowing for a more tailored experience. Social features like commenting, liking, bookmarking, and sharing will further engage users and keep the platform dynamic.\n\nPlatform:\n\nMobile app (iOS and Android)\n\nUser Types and Descriptions:\n\nBrides & Grooms (End Users)\n\nDescription: Brides and grooms who are in the process of planning their weddings will use the app to find inspiration for wedding photos, discover wedding venues, and gather location-based photo ideas. They will save and organize their favorite finds, collaborate with their wedding team, and interact with other users to get inspiration and recommendations.\n\nPurpose: To explore wedding photography inspiration, save and share locations, and create a personalized feed based on preferences, making wedding planning easier.\n\nPhotographers & Videographers (Service Providers)\n\nDescription: Photographers and videographers will create profiles to showcase their work, tag their photos with locations, and gain exposure by sharing their portfolio with brides and grooms. They will be able to interact with potential clients through the platform by receiving inquiries or collaboration requests.\n\nPurpose: To gain exposure, advertise services, and build a professional presence by sharing wedding photos and offering their services.\n\nVenues (Business Profiles)\n\nDescription: Venues will create business profiles where they can list their wedding services, showcase wedding photo spots, and provide recommendations for ideal locations within the venue. They will promote their venue by uploading images of weddings held there.\n\nPurpose: To attract brides and grooms by showcasing wedding venues, offering photo spot suggestions, and gaining visibility within the app.\n\nAdmin (App Administrator)\n\nDescription: The app administrator is responsible for managing user profiles, overseeing content moderation, ensuring the app runs smoothly, and monitoring analytics. They will also manage monetization, handle support requests, and enforce community guidelines.\n\nPurpose: To ensure proper functioning, manage content, and oversee user support and monetization strategies.\n\nTechnical Functional Features of Each User:\n\n1. Bride/Groom (Wedding Planner)\n\nThese are the main features for the bride and groom user types:\n\nAccount Creation & Questionnaire\n\nUsers create an account via email sign-up.\n\nUpon sign-up, a personalized questionnaire is presented to gather preferences such as:\n\nState of mind (e.g., excited, stressed)\n\nWedding venue preferences\n\nPhotography style preferences (e.g., candid, formal)\n\nLocation\n\nThe questionnaire responses will be used to curate personalized content, including photos, venues, and vendors.\n\nPersonalized Content Feed\n\nThe app will generate a curated content feed based on user preferences and saved inspirations from the questionnaire.\n\nThis feed will display relevant venues, photo locations, and photographer portfolios.\n\nCommunity Interaction\n\nUsers can interact with other brides/grooms for inspiration, advice, or suggestions under public posts.\n\nAbility to post questions and share tips within a community of wedding planners.\n\nSearch & Filter Functionality\n\nUsers can search and filter through wedding venues, photo spots, and locations based on the following:\n\nLocation (city, state, or venue name)\n\nWedding theme (e.g., rustic, modern)\n\nVenue type (e.g., outdoor, indoor)\n\nThe search results will display photo spots for specific venues or areas surrounding a selected venue.\n\nSave Inspirations\n\nUsers can save photos of wedding venues, locations, and inspiration pictures to their personal boards (bookmarks).\n\nSaved items can be categorized and edited (e.g., \u201cBridal Photos\u201d or \u201cReception Locations\u201d).\n\nUsers will be able to view and revisit their saved content at any time.\n\nShare Inspirations\n\nUsers can share saved photos and inspiration boards directly with their photographer, family, or friends via:\n\nEmail links\n\nIn-app sharing feature\n\nSocial media sharing (Instagram, Pinterest, Facebook)\n\nAbility to send inspiration directly to photographers using a direct messaging feature inside the app.\n\nCreate & Export Wedding Day Timeline\n\nUsers can create a timeline (run sheet) of their wedding day by dragging and dropping saved photos or venues into specific time slots (e.g., Ceremony, Reception).\n\nThis timeline can be exported to PDF format or shared as a link with vendors or wedding planners.\n\nSubscription Model\n\nAccess to premium content (exclusive photo spots, venue listings) through a subscription model.\n\nUsers can opt for a monthly or annual subscription for access to additional tools and inspiration content.\n\nPayment gateway integration (e.g., Stripe or PayPal) to manage subscriptions and payments.\n\n2. Photographer/Videographer\n\nFor the photographers and videographers, these are the technical features:\n\nProfile Creation\n\nPhotographers can create a detailed profile showcasing their portfolio.\n\nProfiles will include:\n\nBio and background information\n\nGallery of photos (e.g., wedding photos, location-specific shoots)\n\nContact details and booking information\n\nRate card (if applicable)\n\nPortfolio Uploads\n\nPhotographers can upload photos and videos of their work.\n\nThe ability to tag photos with location data (specific wedding venues or photo spots) to increase discoverability.\n\nPhoto permissions: Photographers can only upload images with user permission (e.g., from the bride/groom).\n\nPhoto Engagement Analytics\n\nEngagement statistics: Track likes, comments, and shares on uploaded photos.\n\nLead Generation\n\nPhotographers will be featured as part of a verified professional list for specific wedding venues or locations.\n\nRequest/Contact button on each photographer\u2019s profile for direct booking inquiries.\n\nProfile Updates\n\nPhotographers can regularly update their portfolios with new work.\n\nThey will have the ability to respond to reviews from clients and build their reputation within the community.\n\n3. Venue (Business Profile)\n\nFor venues, the following technical features are needed:\n\nVenue Profile Creation\n\nVenues can create a business profile with the following information:\n\nVenue name, description, and services\n\nGallery of available photo spots (e.g., gardens, reception halls)\n\nContact details (address, phone number, website)\n\nPricing details (optional)\n\nPhoto and Location Tagging\n\nVenues can tag specific locations within the venue (e.g., \u201cGarden Spot 1\u201d or \u201cReception Area 3\u201d) so that users (brides/grooms) can search for photos by venue or photo spot.\n\nPromotions & Special Offers\n\nVenues can post promotions (e.g., discounts, special packages) or events directly on their profile page.\n\nVenues can advertise on the app to gain visibility and attract users.\n\nAnalytics Dashboard\n\nVenues can access analytics to see how often their venue is being viewed and interacted with.\n\n4. Admin (Platform Management)\n\nFor platform admins, the key features are:\n\nCentralized Dashboard\n\nAdmins have access to a comprehensive dashboard that allows them to manage all aspects of the platform.\n\nView user activity, photo uploads, venue listings, and overall engagement across the app.\n\nUser & Content Moderation\n\nAdmins can approve or reject user profiles, photographer profiles, venue listings, and uploaded photos.\n\nContent flagged by users can be reviewed, and inappropriate content can be removed.\n\nSubscription & Payment Management\n\nAdmins manage the subscription model, ensuring users are billed correctly for premium features.\n\nInvoice generation for venue advertisements and photographer subscriptions.\n\nAbility to provide discounts or special offers for users or businesses.\n\nReporting & Analytics\n\nAdmins can generate reports on user activity, engagement statistics, and revenue generation.\n\nReal-time analytics to track growth, subscriptions, and content interactions.\n\nEmail & Notification Management\n\nAdmins can send system-wide notifications for app updates, promotions, and maintenance alerts.\n\nEmail automation for welcome messages, subscription reminders, and event notifications.\n\nIntegrations Needed\n\nPayment Gateway:\n\nFor subscriptions and advertising fees (e.g., Stripe, PayPal).\n\nMap Integration:\n\nApple Maps (iOS) for location-based searches and tagging of photo spots.\n\nSocial Media Integration:\n\nInstagram, Pinterest, Facebook for sharing inspiration photos.\n",
+  "target_platforms": [
+    "Flutter",
+    "API",
+    "CMS"
+  ],
+  "epics": [
+    {
+      "name": "Project Configuration",
+      "description": "Initial project setup and configuration",
+      "tasks": [
+        {
+          "description": "Set up project structure and tools",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Prepare design assets for development",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Database Design",
+      "description": "Database schema and design",
+      "tasks": [
+        {
+          "description": "Database scheme design",
+          "efforts": {
+            "Flutter": 32,
+            "API": 40
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Database implementation",
+          "efforts": {
+            "Flutter": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Data caching",
+          "efforts": {
+            "Flutter": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Authentication",
+      "description": "User authentication and authorization system",
+      "tasks": [
+        {
+          "description": "Signup with Email",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Apple ID",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Apple ID",
+          "efforts": {
+            "Flutter": 6,
+            "API": 12
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Forgot password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Reset password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "OTP verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Resend OTP",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Mobile verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Email verification",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage app features depending on the user's role",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Profile Setup",
+      "description": "Initial profile setup for users",
+      "tasks": [
+        {
+          "description": "Setup user profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup preference details",
+          "efforts": {
+            "Flutter": 12
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup relevant verification document",
+          "efforts": {
+            "Flutter": 24
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "My Profile",
+      "description": "User profile management",
+      "tasks": [
+        {
+          "description": "View profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update profile",
+          "efforts": {
+            "Flutter": 4,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "Flutter": 8,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update mobile number",
+          "efforts": {
+            "Flutter": 4,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Change password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Logout",
+          "efforts": {
+            "Flutter": 2,
+            "API": 2
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Delete account",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Notification",
+      "description": "Push notifications and alerts",
+      "tasks": [
+        {
+          "description": "Display in-app notification list",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage read/unread status of notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Route users based on notification type",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Set up push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Handle receiving and sending push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "ElasticSearch",
+      "description": "Search functionality using Elasticsearch",
+      "tasks": [
+        {
+          "description": "setup elastic search",
+          "efforts": {
+            "Flutter": 4,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "fetch result from elastic search",
+          "efforts": {
+            "Flutter": 6,
+            "API": 40
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Index search item",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Deployment",
+      "description": "Application deployment and release",
+      "tasks": [
+        {
+          "description": "Deployment",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "App User Management",
+      "description": "From I See You - Elena",
+      "tasks": [
+        {
+          "description": "Add/edit",
+          "efforts": {
+            "API": 8,
+            "CMS": 16
+          },
+          "source": "I See You - Elena",
+          "is_custom": false
+        },
+        {
+          "description": "Delete",
+          "efforts": {
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "I See You - Elena",
+          "is_custom": false
+        },
+        {
+          "description": "Listing",
+          "efforts": {
+            "API": 6,
+            "CMS": 8
+          },
+          "source": "I See You - Elena",
+          "is_custom": false
+        },
+        {
+          "description": "Search and filter",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "I See You - Elena",
+          "is_custom": false
+        },
+        {
+          "description": "View details",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "I See You - Elena",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "I See You - Elena",
+      "user_types": null
+    },
+    {
+      "name": "Content Discovery & Engagement (Fans)",
+      "description": "From Ampd - Gerard",
+      "tasks": [
+        {
+          "description": "Boost a post",
+          "efforts": {
+            "API": 16,
+            "Flutter": 8
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Boost post algorithm",
+          "efforts": {
+            "API": 40
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Comment Listing in a post",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Delete comment in video post",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Edit comment in video post",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Feed algorithm integration",
+          "efforts": {
+            "API": 40
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Handle user view counts",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Handle video link redirection in feed",
+          "efforts": {
+            "Flutter": 12
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Infinite vertical Tiktok style feed",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Like/Unlike video post",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Player controls",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Post Comment in video post",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Reply to comment",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Show video progress indicator",
+          "efforts": {
+            "Flutter": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Trigger push notification for like, comment",
+          "efforts": {
+            "API": 6
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Video autoplay, buffering, caching",
+          "efforts": {
+            "Flutter": 12
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        },
+        {
+          "description": "Video player setup",
+          "efforts": {
+            "Flutter": 8
+          },
+          "source": "Ampd - Gerard",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Ampd - Gerard",
+      "user_types": null
+    },
+    {
+      "name": "Discovery & Home Feed (customer)",
+      "description": "From BidIT - Ethan",
+      "tasks": [
+        {
+          "description": "filter",
+          "efforts": {
+            "API": 4,
+            "Flutter": 8
+          },
+          "source": "BidIT - Ethan",
+          "is_custom": false
+        },
+        {
+          "description": "List",
+          "efforts": {
+            "API": 12,
+            "Flutter": 8
+          },
+          "source": "BidIT - Ethan",
+          "is_custom": false
+        },
+        {
+          "description": "Recommendation",
+          "efforts": {
+            "API": 24,
+            "Flutter": 12
+          },
+          "source": "BidIT - Ethan",
+          "is_custom": false
+        },
+        {
+          "description": "Search",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "BidIT - Ethan",
+          "is_custom": false
+        },
+        {
+          "description": "Sort",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "BidIT - Ethan",
+          "is_custom": false
+        },
+        {
+          "description": "view details",
+          "efforts": {
+            "API": 8,
+            "Flutter": 6
+          },
+          "source": "BidIT - Ethan",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "BidIT - Ethan",
+      "user_types": null
+    },
+    {
+      "name": "Home and Personalization - Member",
+      "description": "From Women's Faith App - Sipra",
+      "tasks": [
+        {
+          "description": "Groups",
+          "efforts": {
+            "API": 8,
+            "CMS": 4,
+            "Flutter": 16
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Live sessions",
+          "efforts": {
+            "API": 24,
+            "Flutter": 24
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Prompts",
+          "efforts": {
+            "API": 8,
+            "CMS": 16,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Recommendation feed",
+          "efforts": {
+            "API": 16,
+            "CMS": 8,
+            "Flutter": 16
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Recommendation tuning and weights",
+          "efforts": {
+            "API": 8,
+            "CMS": 16
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Scriptures",
+          "efforts": {
+            "API": 8,
+            "Flutter": 16
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Teachers",
+          "efforts": {
+            "API": 8,
+            "Flutter": 16
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Women's Faith App - Sipra",
+      "user_types": null
+    },
+    {
+      "name": "View Engagement Metrics",
+      "description": "From Social Media template",
+      "tasks": [
+        {
+          "description": "Add chart/graph view for engagement over time",
+          "efforts": {
+            "API": 2,
+            "Flutter": 2
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Display metrics: likes, shares, saves, comments count",
+          "efforts": {
+            "API": 2,
+            "Flutter": 3
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Social Media template",
+      "user_types": null
+    },
+    {
+      "name": "Collaborate with Other Influencers",
+      "description": "From Social Media template",
+      "tasks": [
+        {
+          "description": "Approve/reject collaboration requests",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Cancel a collaboration request",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Create a new collaboration post",
+          "efforts": {
+            "API": 8,
+            "Flutter": 16
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Display collaborators\u2019 usernames on approved joint posts",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Filter requests (sent/received)",
+          "efforts": {
+            "API": 4,
+            "Flutter": 8
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "List all collaboration requests",
+          "efforts": {
+            "API": 6,
+            "Flutter": 12
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Show status of requested collaborations",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Social Media template",
+      "user_types": null
+    },
+    {
+      "name": "Stories",
+      "description": "From Social Media template",
+      "tasks": [
+        {
+          "description": "Add your own story (capture/upload)",
+          "efforts": {
+            "API": 8,
+            "Flutter": 16
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Auto-expire story after 24 hours",
+          "efforts": {
+            "API": 6
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Hide story from selected followers",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "List story highlights from influencers",
+          "efforts": {
+            "API": 8,
+            "Flutter": 16
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Play image/video story (auto-play format)",
+          "efforts": {
+            "API": 6,
+            "Flutter": 12
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Show story timeline + progress bar",
+          "efforts": {
+            "Flutter": 8
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "View number of views for your story",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        },
+        {
+          "description": "Viewers list of your story",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "Social Media template",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Social Media template",
+      "user_types": null
+    },
+    {
+      "name": "Portfolio Uploads - Photographer/Videographer",
+      "description": "From WebMap MVP",
+      "tasks": [
+        {
+          "description": "Photo permissions",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Remove Photo and videos",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "tag photos with location data",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Upload photos and videos",
+          "efforts": {
+            "API": 16,
+            "Flutter": 24
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "View Portfolio photo and videos",
+          "efforts": {
+            "API": 14,
+            "Flutter": 24
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "WebMap MVP",
+      "user_types": null
+    },
+    {
+      "name": "Photo and Location Tagging - Venue",
+      "description": "From WebMap MVP",
+      "tasks": [
+        {
+          "description": "Add tag specific locations within the venue",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Tag",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "List photo based on tag",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Remove Tag",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "WebMap MVP",
+      "user_types": null
+    },
+    {
+      "name": "Admin Dashboard - CMS",
+      "description": "From MyFyBe",
+      "tasks": [
+        {
+          "description": "Adjust application settings",
+          "efforts": {
+            "CMS": 12
+          },
+          "source": "MyFyBe",
+          "is_custom": false
+        },
+        {
+          "description": "View basic statistics and key information",
+          "efforts": {
+            "API": 20,
+            "CMS": 20
+          },
+          "source": "MyFyBe",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "MyFyBe",
+      "user_types": null
+    },
+    {
+      "name": "Moderator",
+      "description": "From Women's Faith App - Sipra",
+      "tasks": [
+        {
+          "description": "Approve / Remove Content",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Canned Responses",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Escalate to Admin",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Moderation Dashboard",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "Shadowban / Timeout",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        },
+        {
+          "description": "View Report History",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "Women's Faith App - Sipra",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Women's Faith App - Sipra",
+      "user_types": null
+    },
+    {
+      "name": "API - Payment Integration",
+      "description": "From Stay Upright est",
+      "tasks": [
+        {
+          "description": "AfterPay integration",
+          "efforts": {
+            "API": 17
+          },
+          "source": "Stay Upright est",
+          "is_custom": false
+        },
+        {
+          "description": "Integrate payment gateways (Stripe)",
+          "efforts": {
+            "API": 17
+          },
+          "source": "Stay Upright est",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Stay Upright est",
+      "user_types": null
+    },
+    {
+      "name": "Paypal integration",
+      "description": "From Master Template - APP v2-copy1",
+      "tasks": [
+        {
+          "description": "Paypal integration",
+          "efforts": {
+            "API": 40,
+            "Flutter": 40
+          },
+          "source": "Master Template - APP v2-copy1",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Master Template - APP v2-copy1",
+      "user_types": null
+    },
+    {
+      "name": "Analytics Dashboard - Venue",
+      "description": "From WedMap",
+      "tasks": [
+        {
+          "description": "Export report data",
+          "efforts": {
+            "API": 16,
+            "Flutter": 6
+          },
+          "source": "WedMap",
+          "is_custom": false
+        },
+        {
+          "description": "Filter analytics dashboard",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "WedMap",
+          "is_custom": false
+        },
+        {
+          "description": "Track user interaction to venue profile",
+          "efforts": {
+            "API": 16,
+            "Flutter": 24
+          },
+          "source": "WedMap",
+          "is_custom": false
+        },
+        {
+          "description": "View analytics dashboard",
+          "efforts": {
+            "API": 24,
+            "Flutter": 32
+          },
+          "source": "WedMap",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "WedMap",
+      "user_types": null
+    },
+    {
+      "name": "Promotions & Special Offers - Venue",
+      "description": "From WebMap MVP",
+      "tasks": [
+        {
+          "description": "Add venue adverstiments",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Create promotions post",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Delete promotion post",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "Edit promotion post",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        },
+        {
+          "description": "List promotion posts",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "WebMap MVP",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "WebMap MVP",
+      "user_types": null
+    },
+    {
+      "name": "Advanced Promo Campaigns",
+      "description": "From BidIT - Ethan (Phase 2)",
+      "tasks": [
+        {
+          "description": "Create promotion",
+          "efforts": {
+            "API": 8,
+            "CMS": 12
+          },
+          "source": "BidIT - Ethan (Phase 2)",
+          "is_custom": false
+        },
+        {
+          "description": "Display promo banners",
+          "efforts": {
+            "API": 8,
+            "CMS": 8,
+            "Flutter": 8
+          },
+          "source": "BidIT - Ethan (Phase 2)",
+          "is_custom": false
+        },
+        {
+          "description": "Measure campaign performance",
+          "efforts": {
+            "API": 16,
+            "CMS": 8
+          },
+          "source": "BidIT - Ethan (Phase 2)",
+          "is_custom": false
+        },
+        {
+          "description": "Schedule promotion",
+          "efforts": {
+            "API": 14,
+            "CMS": 8
+          },
+          "source": "BidIT - Ethan (Phase 2)",
+          "is_custom": false
+        },
+        {
+          "description": "Track campaign",
+          "efforts": {
+            "API": 16,
+            "CMS": 8
+          },
+          "source": "BidIT - Ethan (Phase 2)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "BidIT - Ethan (Phase 2)",
+      "user_types": null
+    },
+    {
+      "name": "Personalized Questionnaire - Bride/Groom",
+      "description": "Create a personalized questionnaire for brides and grooms to gather preferences.",
+      "tasks": [
+        {
+          "description": "Design questionnaire structure and flow",
+          "efforts": {
+            "Flutter": 16,
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement questionnaire UI with validation",
+          "efforts": {
+            "Flutter": 24,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Store and retrieve questionnaire responses",
+          "efforts": {
+            "Flutter": 12,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Personalized Content Feed - Bride/Groom",
+      "description": "Develop a personalized content feed based on user preferences.",
+      "tasks": [
+        {
+          "description": "Create algorithm for content personalization",
+          "efforts": {
+            "API": 40
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement content feed UI with filtering options",
+          "efforts": {
+            "Flutter": 24,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Integrate user preferences into content feed",
+          "efforts": {
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Community Interaction - Bride/Groom",
+      "description": "Enable community interactions such as comments and likes.",
+      "tasks": [
+        {
+          "description": "Implement commenting system for posts",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create like/dislike functionality for posts",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display community interactions on posts",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Search Functionality - Bride/Groom",
+      "description": "Implement search functionality for users to find content and vendors.",
+      "tasks": [
+        {
+          "description": "Design search UI with filters",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement search algorithm and indexing",
+          "efforts": {
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Integrate search results display in the app",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Save Inspirations - Bride/Groom",
+      "description": "Allow users to save inspirations and ideas for their wedding.",
+      "tasks": [
+        {
+          "description": "Implement save functionality for posts and ideas",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create UI for viewing saved inspirations",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Store saved inspirations in user profiles",
+          "efforts": {
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Share Inspirations - Bride/Groom",
+      "description": "Enable users to share their saved inspirations with others.",
+      "tasks": [
+        {
+          "description": "Implement sharing functionality for inspirations",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create UI for sharing options (social media, email)",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Wedding Day Timeline - Bride/Groom",
+      "description": "Create a timeline feature for users to plan their wedding day.",
+      "tasks": [
+        {
+          "description": "Design timeline structure and UI",
+          "efforts": {
+            "Flutter": 20,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement timeline creation and editing features",
+          "efforts": {
+            "Flutter": 24,
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Store and retrieve timeline data",
+          "efforts": {
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Subscription Model - Admin",
+      "description": "Develop a subscription model for users to access premium features.",
+      "tasks": [
+        {
+          "description": "Design subscription plans and pricing structure",
+          "efforts": {
+            "CMS": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement subscription management features",
+          "efforts": {
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Integrate payment gateway for subscription processing",
+          "efforts": {
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Payment Gateway Integration - Admin",
+      "description": "Integrate payment gateways for processing transactions.",
+      "tasks": [
+        {
+          "description": "Select and configure payment gateway options",
+          "efforts": {
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement transaction handling and security measures",
+          "efforts": {
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Test payment processing workflows",
+          "efforts": {
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Photo Engagement Analytics - Photographer/Videographer",
+      "description": "Provide analytics on photo engagement for photographers.",
+      "tasks": [
+        {
+          "description": "Implement engagement metrics tracking",
+          "efforts": {
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create UI for displaying engagement analytics",
+          "efforts": {
+            "Flutter": 20,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Lead Generation - Photographer/Videographer",
+      "description": "Develop features for photographers to generate leads.",
+      "tasks": [
+        {
+          "description": "Implement lead capture forms and workflows",
+          "efforts": {
+            "Flutter": 20,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create UI for managing leads and inquiries",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "User and Content Moderation - Admin",
+      "description": "Develop moderation tools for admins to manage users and content.",
+      "tasks": [
+        {
+          "description": "Implement user moderation features (ban, suspend)",
+          "efforts": {
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create content moderation tools (approve, reject)",
+          "efforts": {
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Design moderation dashboard for admins",
+          "efforts": {
+            "CMS": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Reporting and Analytics - Admin",
+      "description": "Provide reporting and analytics features for admins.",
+      "tasks": [
+        {
+          "description": "Implement reporting features for user activity",
+          "efforts": {
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create analytics dashboard for key metrics",
+          "efforts": {
+            "CMS": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Secure Payments - Admin",
+      "description": "Ensure secure payment processing and compliance.",
+      "tasks": [
+        {
+          "description": "Implement security measures for payment transactions",
+          "efforts": {
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Conduct security audits and compliance checks",
+          "efforts": {
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Location Services - Venue",
+      "description": "Integrate location services for venue profiles.",
+      "tasks": [
+        {
+          "description": "Implement location tagging for venue profiles",
+          "efforts": {
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create UI for displaying venue locations on maps",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Social Media Integration - Admin",
+      "description": "Integrate social media sharing features for users.",
+      "tasks": [
+        {
+          "description": "Implement social media sharing options",
+          "efforts": {
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create UI for managing social media connections",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    }
+  ],
+  "generated_at": "2026-01-14T09:07:51.189550",
+  "analyzed_requirement": {
+    "project_name": "Wed Map",
+    "domain": "social_media",
+    "features": [
+      "account creation",
+      "personalized questionnaire",
+      "personalized content feed",
+      "community interaction",
+      "search functionality",
+      "filter functionality",
+      "save inspirations",
+      "share inspirations",
+      "create wedding day timeline",
+      "subscription model",
+      "payment gateway integration",
+      "profile creation for photographers",
+      "portfolio uploads for photographers",
+      "photo engagement analytics",
+      "lead generation for photographers",
+      "profile updates for photographers",
+      "venue profile creation",
+      "photo and location tagging for venues",
+      "promotions and special offers for venues",
+      "analytics dashboard for venues",
+      "centralized dashboard for admins",
+      "user and content moderation",
+      "subscription and payment management",
+      "reporting and analytics for admins",
+      "email and notification management",
+      "secure payments",
+      "payment integration",
+      "location services",
+      "social media integration"
+    ],
+    "tech_stack": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "platforms": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "initial_epics": [
+      "User Account Management",
+      "Content Discovery",
+      "Community Engagement",
+      "Photographer Features",
+      "Venue Features",
+      "Admin Management",
+      "Payment System",
+      "Subscription Model",
+      "Analytics",
+      "Promotions"
+    ],
+    "epic_categories": {
+      "User Account Management": [
+        "account creation",
+        "personalized questionnaire"
+      ],
+      "Content Discovery": [
+        "personalized content feed",
+        "search functionality",
+        "filter functionality"
+      ],
+      "Community Engagement": [
+        "community interaction",
+        "save inspirations",
+        "share inspirations"
+      ],
+      "Photographer Features": [
+        "profile creation for photographers",
+        "portfolio uploads for photographers",
+        "lead generation for photographers"
+      ],
+      "Venue Features": [
+        "venue profile creation",
+        "photo and location tagging for venues",
+        "promotions and special offers for venues"
+      ],
+      "Admin Management": [
+        "centralized dashboard for admins",
+        "user and content moderation",
+        "reporting and analytics for admins"
+      ],
+      "Payment System": [
+        "payment gateway integration",
+        "secure payments",
+        "payment integration"
+      ],
+      "Subscription Model": [
+        "subscription model"
+      ],
+      "Analytics": [
+        "analytics dashboard for venues"
+      ],
+      "Promotions": [
+        "promotions and special offers for venues"
+      ]
+    },
+    "complexity": "complex",
+    "user_types": [
+      "Bride",
+      "Groom",
+      "Photographer",
+      "Videographer",
+      "Venue",
+      "Admin"
+    ],
+    "special_requirements": [
+      "real-time features",
+      "payment integration",
+      "high availability"
+    ]
+  },
+  "total_hours": 3517
+}

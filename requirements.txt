@@ -1,0 +1,42 @@
+# Core Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-dotenv==1.0.1
+
+# LangGraph & LangChain
+langgraph==0.2.45
+langchain==0.3.7
+langchain-openai==0.2.8
+langchain-core>=0.3.17,<0.4.0
+
+# Data Validation & Serialization
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# OpenAI
+openai==1.57.0
+
+# Frontend
+streamlit==1.40.1
+
+# Utilities
+python-multipart==0.0.12
+httpx==0.27.2
+aiofiles==24.1.0
+
+# Development
+pytest==8.3.4
+pytest-asyncio==0.24.0
+black==24.10.0
+ruff==0.8.4
+
+openai>=1.0.0
+numpy>=1.24.0
+mysql-connector-python>=8.0.0
+PyPDF2
+
+# Comparison Tool Dependencies
+markdown==3.7
+pdfkit==1.0.0
+tabulate==0.9.0
+python-dateutil==2.9.0

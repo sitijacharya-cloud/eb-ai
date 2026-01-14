@@ -1,0 +1,2155 @@
+{
+  "project_name": "grade time",
+  "description": "This document defines the requirements for GradeTime and is intended to enable a selected development partner to provide a non-binding cost estimate for development, testing, and delivery (assuming design is largely complete), propose a high-level development schedule and timeline, nominate an indicative project start date, and identify assumptions, dependencies, risks, and exclusions, and it should be read alongside the Lovable prototype as the source of truth for UX and feature intent; GradeTime is a web-based AI grading and analytics platform used exclusively by teachers and school staff (no student or parent logins) that automates marking and feedback for Extended Response, Short Answer, and Multiple Choice assessments, reduces teacher marking time, provides rubric-aligned editable AI scores and feedback, aggregates results into student, class, and school analytics, supports school-level oversight via an admin dashboard, integrates with Google Classroom, Canvas, and Turnitin, and uses OCR and AI document ingestion for PDFs, DOCX, JPG, and PNG including scanned handwriting; the teacher experience includes a dashboard with class and assignment navigation, class overview pages with metrics and exports, comprehensive rubric management (upload with OCR and AI parsing, stock rubrics, AI rubric creation, editable personal libraries with lifecycle controls), assignment creation and AI marking flows for all three task types with teacher-in-the-loop review, score adjustment, feedback editing, regeneration, plagiarism similarity scoring, and analytics mapping, detailed marking review via class and individual results screens with inline annotations and CSV/PDF exports, extensive student and class analytics with trends, strengths, weaknesses, misconceptions, AI-generated summaries, and report exports, per-teacher settings covering account details, class and roster management, syllabus uploads, grading defaults, and AI feedback style-guide training from prior marked work, and a full admin dashboard for user, class, integration, billing, analytics, compliance, logging, and error management; technically, the platform must align with ST4S and Australian legal requirements (Privacy Act 1988, APPs, NDB), enforce strict data privacy and minimisation, tenant isolation, encryption, Australian data residency, secure authentication and SSO readiness, auditing, logging, backups, incident response, configurable retention, explainable and governed AI usage with provider-agnostic abstraction, asynchronous AI and OCR processing, modular multi-tenant architecture with a single public API, LMS and plagiarism integrations, defined performance, scalability, and availability targets from MVP to full scale, and robust non-functional requirements covering security, reliability, and compliance.\n\n\n",
+  "target_platforms": [
+    "Web App",
+    "API",
+    "CMS"
+  ],
+  "epics": [
+    {
+      "name": "Project Configuration",
+      "description": "Initial project setup and configuration",
+      "tasks": [
+        {
+          "description": "Set up project structure and tools",
+          "efforts": {
+            "Web App": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Build layout using HTML/CSS",
+          "efforts": {
+            "Web App": 50
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Ensure responsive design for all devices",
+          "efforts": {
+            "Web App": 50
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Database Design",
+      "description": "Database schema and design",
+      "tasks": [
+        {
+          "description": "Database scheme design",
+          "efforts": {
+            "API": 40
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Authentication",
+      "description": "User authentication and authorization system",
+      "tasks": [
+        {
+          "description": "Signup with Email",
+          "efforts": {
+            "Web App": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Apple ID",
+          "efforts": {
+            "Web App": 8,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Google",
+          "efforts": {
+            "Web App": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with email",
+          "efforts": {
+            "Web App": 4,
+            "API": 4,
+            "CMS": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Apple ID",
+          "efforts": {
+            "Web App": 4,
+            "API": 12
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Google",
+          "efforts": {
+            "Web App": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Forgot password",
+          "efforts": {
+            "Web App": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Reset password",
+          "efforts": {
+            "Web App": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "OTP verification",
+          "efforts": {
+            "Web App": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Resend OTP",
+          "efforts": {
+            "Web App": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Mobile verification",
+          "efforts": {
+            "Web App": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Email verification",
+          "efforts": {
+            "Web App": 6,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage app features depending on the user's role",
+          "efforts": {
+            "Web App": 16,
+            "API": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Profile Setup",
+      "description": "Initial profile setup for users",
+      "tasks": [
+        {
+          "description": "Setup user profile",
+          "efforts": {
+            "Web App": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup preference details",
+          "efforts": {
+            "Web App": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup relevant verification document",
+          "efforts": {
+            "Web App": 12
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "My Profile",
+      "description": "User profile management",
+      "tasks": [
+        {
+          "description": "View profile",
+          "efforts": {
+            "Web App": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update profile",
+          "efforts": {
+            "Web App": 4,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "Web App": 8,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update email",
+          "efforts": {
+            "Web App": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update mobile number",
+          "efforts": {
+            "Web App": 4,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Change password",
+          "efforts": {
+            "Web App": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Logout",
+          "efforts": {
+            "Web App": 2,
+            "API": 2
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Delete account",
+          "efforts": {
+            "Web App": 6,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Notification",
+      "description": "Push notifications and alerts",
+      "tasks": [
+        {
+          "description": "Display in-app notification list",
+          "efforts": {
+            "Web App": 8,
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage read/unread status of notifications",
+          "efforts": {
+            "Web App": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Route users based on notification type",
+          "efforts": {
+            "Web App": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Set up push notifications",
+          "efforts": {
+            "Web App": 8,
+            "API": 12,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Handle receiving and sending push notifications",
+          "efforts": {
+            "Web App": 16,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "ElasticSearch",
+      "description": "Search functionality using Elasticsearch",
+      "tasks": [
+        {
+          "description": "setup elastic search",
+          "efforts": {
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "fetch result from elastic search",
+          "efforts": {
+            "API": 40
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Index search item",
+          "efforts": {
+            "API": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Deployment",
+      "description": "Application deployment and release",
+      "tasks": [
+        {
+          "description": "Deployment",
+          "efforts": {
+            "Web App": 8,
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Rubric Management - Teacher",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Clone Rubric Stock",
+          "efforts": {
+            "API": 4,
+            "Web App": 4
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Delete Rubric",
+          "efforts": {
+            "API": 4,
+            "Web App": 4
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Rubric",
+          "efforts": {
+            "API": 8,
+            "Web App": 12
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Fetch Rubric Library",
+          "efforts": {
+            "API": 8,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Filters & Search",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Rubric Creator  (AI)",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Rubric Editor",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Upload Rubrics",
+          "efforts": {
+            "API": 8,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Class Analytics - Teacher",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "AI-generated class summary",
+          "efforts": {
+            "API": 12,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Class strengths and weaknesses",
+          "efforts": {
+            "API": 2,
+            "Web App": 14
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Grade distribution graph",
+          "efforts": {
+            "API": 8,
+            "Web App": 24
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Overall class trend graph",
+          "efforts": {
+            "API": 6,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Student performance overview table",
+          "efforts": {
+            "API": 6,
+            "Web App": 14
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "View and show PDF report",
+          "efforts": {
+            "API": 6,
+            "Web App": 12
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Assignment Types & Marking Flows - Teacher",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Add inline comment",
+          "efforts": {
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Adjust criterion scores and overall score",
+          "efforts": {
+            "Web App": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Analytics Mapping",
+          "efforts": {
+            "API": 6,
+            "Web App": 4
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Delete inline comment",
+          "efforts": {
+            "Web App": 4
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Assignment",
+          "efforts": {
+            "API": 6,
+            "Web App": 12
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Feedback summary",
+          "efforts": {
+            "Web App": 12
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Inline comment",
+          "efforts": {
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Extended Response (Essays & Long-Form Tasks)",
+          "efforts": {
+            "API": 6,
+            "Web App": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Extract student answer and mapping",
+          "efforts": {
+            "API": 6,
+            "Web App": 10
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Fed data to AI engine",
+          "efforts": {
+            "API": 14,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Generate AI score and feedback for short answer",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Generate AI score for MCQ",
+          "efforts": {
+            "API": 8,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Generated and display AI feedbacks",
+          "efforts": {
+            "API": 16,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "highlight strengths and weaknesses in the text",
+          "efforts": {
+            "Web App": 14
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Multiple Choice (MCQ) scoring",
+          "efforts": {
+            "API": 6,
+            "Web App": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Question setup for MCQ",
+          "efforts": {
+            "API": 12,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Short Answer scoring",
+          "efforts": {
+            "API": 6,
+            "Web App": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Student responses for MCQ",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Teacher Capabilities for MCQ",
+          "efforts": {
+            "API": 14,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Teacher capabilities for Short answer",
+          "efforts": {
+            "API": 8,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "School Level Analytics - School",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Cohort comparisons",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Performace views",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Teacher analytics",
+          "efforts": {
+            "API": 12,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Admin Dashboard - School",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Adjust application settings",
+          "efforts": {
+            "Web App": 12
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "View basic statistics and key information",
+          "efforts": {
+            "API": 16,
+            "Web App": 40
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Settings & Class Management - Teacher",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Account View",
+          "efforts": {
+            "API": 6,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Class Details view",
+          "efforts": {
+            "API": 6,
+            "Web App": 24
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Class List View",
+          "efforts": {
+            "API": 8,
+            "Web App": 18
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Enable/Disable Plagiarism Checker",
+          "efforts": {
+            "API": 2,
+            "Web App": 4
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Class & course management - School",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Add Class and course",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Class details",
+          "efforts": {
+            "API": 4,
+            "Web App": 14
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Edit/update class",
+          "efforts": {
+            "API": 4,
+            "Web App": 12
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Edit/update course",
+          "efforts": {
+            "API": 4,
+            "Web App": 10
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "View class and course",
+          "efforts": {
+            "API": 6,
+            "Web App": 14
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "view enrolments and curricula",
+          "efforts": {
+            "API": 6,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Turnitin Integration",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Class-Level Plagiarism Toggle",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Configure and setup google Turnitin API",
+          "efforts": {
+            "API": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Enablement & Guardrails",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Results Display & Indicators",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Turnitin Credential & Policy Configuration",
+          "efforts": {
+            "API": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Google Classroom Integration",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Assignment Discovery & Selection",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Class Import & Mapping",
+          "efforts": {
+            "API": 6,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Configure and setup google Classroom API",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Fetch & Display Classroom Classes",
+          "efforts": {
+            "API": 6,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Fetch GC assignments per class",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Google OAuth & Teacher Account Linking",
+          "efforts": {
+            "API": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Grade Push-Back to Google Classroom",
+          "efforts": {
+            "API": 8,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Ongoing Sync Logic",
+          "efforts": {
+            "API": 6,
+            "Web App": 16
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Permission Enforcement & Guardrails",
+          "efforts": {
+            "API": 6
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Teacher Account Mapping",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Integration Management - School",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Toggle integrations",
+          "efforts": {
+            "API": 14,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "View integrations",
+          "efforts": {
+            "API": 14,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Security & Privacy (End User)",
+      "description": "From Regulate - Kyra",
+      "tasks": [
+        {
+          "description": "Data removal/reset logic",
+          "efforts": {
+            "API": 4
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        },
+        {
+          "description": "Deidentify user-related stored data",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        },
+        {
+          "description": "Device-level biometric lock (optional)",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        },
+        {
+          "description": "Local encryption of user data",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        },
+        {
+          "description": "Secure handling of audio, transcripts, health data",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Regulate - Kyra",
+      "user_types": null
+    },
+    {
+      "name": "Watch Security (Watch App) - End User",
+      "description": "From Regulate - Kyra",
+      "tasks": [
+        {
+          "description": "Follow same encryption/deidentification rules",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        },
+        {
+          "description": "Secure local watch storage for sensitive data",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        },
+        {
+          "description": "Secure sync with mobile",
+          "efforts": {
+            "API": 8
+          },
+          "source": "Regulate - Kyra",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Regulate - Kyra",
+      "user_types": null
+    },
+    {
+      "name": "Trust Index Algorithm Management",
+      "description": "From Cervo mvp est",
+      "tasks": [
+        {
+          "description": "Adjust scoring weights",
+          "efforts": {
+            "API": 12,
+            "CMS": 16
+          },
+          "source": "Cervo mvp est",
+          "is_custom": false
+        },
+        {
+          "description": "View score change logs",
+          "efforts": {
+            "API": 16,
+            "CMS": 8
+          },
+          "source": "Cervo mvp est",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Cervo mvp est",
+      "user_types": null
+    },
+    {
+      "name": "MT - Review And Rating",
+      "description": "From Education Template",
+      "tasks": [
+        {
+          "description": "Add/edit  review and ratings",
+          "efforts": {
+            "API": 6,
+            "CMS": 6,
+            "Web App": 4
+          },
+          "source": "Education Template",
+          "is_custom": false
+        },
+        {
+          "description": "Delete ratings and review",
+          "efforts": {
+            "API": 4,
+            "CMS": 4,
+            "Web App": 2
+          },
+          "source": "Education Template",
+          "is_custom": false
+        },
+        {
+          "description": "List review and ratings",
+          "efforts": {
+            "API": 8,
+            "CMS": 8,
+            "Web App": 12
+          },
+          "source": "Education Template",
+          "is_custom": false
+        },
+        {
+          "description": "View review detail",
+          "efforts": {
+            "API": 6,
+            "CMS": 6,
+            "Web App": 8
+          },
+          "source": "Education Template",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Education Template",
+      "user_types": null
+    },
+    {
+      "name": "CMS - Instructor Management",
+      "description": "From The Beauty grail Original",
+      "tasks": [
+        {
+          "description": "Add/edit",
+          "efforts": {
+            "API": 24
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Associated Payment",
+          "efforts": {
+            "API": 18
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Courses assocatied",
+          "efforts": {
+            "API": 16
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Delete",
+          "efforts": {
+            "API": 4
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Listing",
+          "efforts": {
+            "API": 8
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Setup bank details",
+          "efforts": {
+            "API": 32
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Subscription associated",
+          "efforts": {
+            "API": 32
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "View details",
+          "efforts": {
+            "API": 16
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        },
+        {
+          "description": "Weekly report",
+          "efforts": {
+            "API": 40
+          },
+          "source": "The Beauty grail Original",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "The Beauty grail Original",
+      "user_types": null
+    },
+    {
+      "name": "Dashboard - Teacher",
+      "description": "From Gradetime",
+      "tasks": [
+        {
+          "description": "Class Assignments table",
+          "efforts": {
+            "API": 12,
+            "Web App": 24
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Class Overview Page details",
+          "efforts": {
+            "API": 8,
+            "Web App": 14
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Export Class Data",
+          "efforts": {
+            "API": 6,
+            "Web App": 18
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Metrics cards",
+          "efforts": {
+            "API": 12,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "My Classes Cards",
+          "efforts": {
+            "API": 12,
+            "Web App": 24
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        },
+        {
+          "description": "Recent Assignments List",
+          "efforts": {
+            "API": 8,
+            "Web App": 8
+          },
+          "source": "Gradetime",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime",
+      "user_types": null
+    },
+    {
+      "name": "Access Log",
+      "description": "From Beare Flooring (All-in-one)",
+      "tasks": [
+        {
+          "description": "Log every action performed by staff members for transparency",
+          "efforts": {
+            "API": 24,
+            "Web App": 16
+          },
+          "source": "Beare Flooring (All-in-one)",
+          "is_custom": false
+        },
+        {
+          "description": "Maintain detailed logs for data access and data manipulation",
+          "efforts": {
+            "API": 12,
+            "Web App": 12
+          },
+          "source": "Beare Flooring (All-in-one)",
+          "is_custom": false
+        },
+        {
+          "description": "Track and log platform activities",
+          "efforts": {
+            "API": 16,
+            "Web App": 8
+          },
+          "source": "Beare Flooring (All-in-one)",
+          "is_custom": false
+        },
+        {
+          "description": "View a complete history of activities in the system",
+          "efforts": {
+            "API": 8,
+            "Web App": 16
+          },
+          "source": "Beare Flooring (All-in-one)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Beare Flooring (All-in-one)",
+      "user_types": null
+    },
+    {
+      "name": "Audit Logs & Security Monitoring",
+      "description": "From AgentSwipe - Michae",
+      "tasks": [
+        {
+          "description": "Audit Log Viewer",
+          "efforts": {
+            "API": 12,
+            "CMS": 12
+          },
+          "source": "AgentSwipe - Michae",
+          "is_custom": false
+        },
+        {
+          "description": "Filter & Export Logs",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "AgentSwipe - Michae",
+          "is_custom": false
+        },
+        {
+          "description": "Security Alerts",
+          "efforts": {
+            "API": 16,
+            "CMS": 8
+          },
+          "source": "AgentSwipe - Michae",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AgentSwipe - Michae",
+      "user_types": null
+    },
+    {
+      "name": "AI Grading and Feedback Automation",
+      "description": "Automate grading and provide feedback using AI algorithms.",
+      "tasks": [
+        {
+          "description": "Integrate AI model for grading assessments",
+          "efforts": {
+            "Web App": 40,
+            "API": 60
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop feedback generation mechanism based on AI scores",
+          "efforts": {
+            "Web App": 30,
+            "API": 50
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement user interface for displaying AI-generated feedback",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Analytics Mapping - Admin",
+      "description": "Provide comprehensive analytics mapping for student, class, and school performance.",
+      "tasks": [
+        {
+          "description": "Design data models for analytics collection",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement analytics dashboard for visualizing data",
+          "efforts": {
+            "Web App": 32,
+            "API": 40
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create reports for class and school performance metrics",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "OCR Document Ingestion",
+      "description": "Implement OCR capabilities for document ingestion.",
+      "tasks": [
+        {
+          "description": "Integrate OCR library for text extraction",
+          "efforts": {
+            "Web App": 30,
+            "API": 40
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop user interface for uploading documents",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement validation and error handling for document uploads",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Plagiarism Similarity Scoring",
+      "description": "Implement plagiarism detection and similarity scoring.",
+      "tasks": [
+        {
+          "description": "Integrate plagiarism detection API",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop UI for displaying similarity scores and reports",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement user notifications for plagiarism results",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Assignment Creation - Teacher",
+      "description": "Facilitate the creation and management of assignments.",
+      "tasks": [
+        {
+          "description": "Build assignment creation interface with rubric selection",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement backend logic for saving assignments",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable assignment editing and deletion functionalities",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Detailed Marking Review - Teacher",
+      "description": "Provide tools for teachers to review and adjust marks.",
+      "tasks": [
+        {
+          "description": "Create interface for reviewing student submissions",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement score adjustment features for teachers",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Allow inline annotations on student submissions",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Feedback Editing - Teacher",
+      "description": "Allow teachers to edit feedback provided to students.",
+      "tasks": [
+        {
+          "description": "Develop interface for editing feedback on submissions",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement saving and updating feedback functionality",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create notification system for feedback updates",
+          "efforts": {
+            "Web App": 12,
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Report Exports - Admin",
+      "description": "Enable exporting of reports in various formats.",
+      "tasks": [
+        {
+          "description": "Implement CSV export functionality for analytics data",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop PDF export capabilities for reports",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create user interface for selecting export options",
+          "efforts": {
+            "Web App": 12,
+            "API": 20
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Class Overview Pages - Admin",
+      "description": "Provide comprehensive overview pages for classes.",
+      "tasks": [
+        {
+          "description": "Design class overview UI with key metrics",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement backend logic to fetch class data",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable filtering and sorting options for class data",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Compliance Management - Admin",
+      "description": "Ensure compliance with data privacy regulations.",
+      "tasks": [
+        {
+          "description": "Implement data privacy policies and procedures",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create audit logs for compliance tracking",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop user consent management features",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Billing Management - Admin",
+      "description": "Manage billing and invoicing processes.",
+      "tasks": [
+        {
+          "description": "Implement billing system integration with payment gateways",
+          "efforts": {
+            "Web App": 30,
+            "API": 40
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create invoice generation and management features",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop reporting tools for billing analytics",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Asynchronous AI Processing",
+      "description": "Implement asynchronous processing for AI tasks.",
+      "tasks": [
+        {
+          "description": "Develop queuing system for AI task processing",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement background processing for AI model training",
+          "efforts": {
+            "Web App": 40,
+            "API": 60
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create notification system for task completion",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Data Privacy and Minimization",
+      "description": "Ensure data privacy and minimize data collection.",
+      "tasks": [
+        {
+          "description": "Implement data minimization strategies",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create user data access and deletion features",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Develop compliance reporting tools for data privacy",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Tenant Isolation",
+      "description": "Implement tenant isolation for multi-tenant architecture.",
+      "tasks": [
+        {
+          "description": "Design database schema for tenant isolation",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement access controls for tenant data",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create tenant management interface for admins",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Audit and Logging",
+      "description": "Implement auditing and logging for system activities.",
+      "tasks": [
+        {
+          "description": "Develop logging framework for capturing events",
+          "efforts": {
+            "Web App": 20,
+            "API": 30
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create audit trails for user actions",
+          "efforts": {
+            "Web App": 24,
+            "API": 32
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement reporting tools for logs and audits",
+          "efforts": {
+            "Web App": 16,
+            "API": 24
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    }
+  ],
+  "generated_at": "2026-01-14T09:51:53.577596",
+  "analyzed_requirement": {
+    "project_name": "grade time",
+    "domain": "education",
+    "features": [
+      "AI grading and feedback automation",
+      "rubric-aligned editable AI scores",
+      "student, class, and school analytics",
+      "admin dashboard for oversight",
+      "Google Classroom integration",
+      "Canvas integration",
+      "Turnitin integration",
+      "OCR document ingestion",
+      "AI marking flows",
+      "teacher-in-the-loop review",
+      "score adjustment",
+      "feedback editing",
+      "plagiarism similarity scoring",
+      "analytics mapping",
+      "class and assignment navigation",
+      "class overview pages with metrics",
+      "comprehensive rubric management",
+      "assignment creation",
+      "detailed marking review",
+      "inline annotations",
+      "CSV/PDF exports",
+      "extensive student and class analytics",
+      "AI-generated summaries",
+      "report exports",
+      "per-teacher settings",
+      "user management",
+      "class management",
+      "integration management",
+      "billing management",
+      "compliance management",
+      "logging and error management",
+      "data privacy and minimization",
+      "tenant isolation",
+      "encryption",
+      "secure authentication",
+      "SSO readiness",
+      "auditing",
+      "logging",
+      "backups",
+      "incident response",
+      "configurable retention",
+      "explainable AI usage",
+      "asynchronous AI processing",
+      "modular multi-tenant architecture",
+      "public API",
+      "defined performance targets",
+      "scalability targets",
+      "availability targets"
+    ],
+    "tech_stack": [
+      "AI",
+      "OCR",
+      "API",
+      "Web Technologies"
+    ],
+    "platforms": [
+      "Web App",
+      "API",
+      "CMS"
+    ],
+    "initial_epics": [
+      "Grading Automation",
+      "Analytics and Reporting",
+      "User Management",
+      "Integration Management",
+      "Compliance and Security",
+      "Rubric Management",
+      "Assignment Management",
+      "Teacher Dashboard",
+      "Admin Dashboard",
+      "Data Management"
+    ],
+    "epic_categories": {
+      "Grading Automation": [
+        "AI grading and feedback automation",
+        "AI marking flows",
+        "teacher-in-the-loop review",
+        "plagiarism similarity scoring"
+      ],
+      "Analytics and Reporting": [
+        "student, class, and school analytics",
+        "extensive student and class analytics",
+        "AI-generated summaries",
+        "report exports"
+      ],
+      "User Management": [
+        "user management",
+        "class management",
+        "per-teacher settings"
+      ],
+      "Integration Management": [
+        "Google Classroom integration",
+        "Canvas integration",
+        "Turnitin integration"
+      ],
+      "Compliance and Security": [
+        "data privacy and minimization",
+        "tenant isolation",
+        "encryption",
+        "secure authentication"
+      ],
+      "Rubric Management": [
+        "comprehensive rubric management",
+        "rubric-aligned editable AI scores"
+      ],
+      "Assignment Management": [
+        "assignment creation",
+        "class and assignment navigation"
+      ],
+      "Teacher Dashboard": [
+        "class overview pages with metrics",
+        "detailed marking review",
+        "inline annotations",
+        "CSV/PDF exports"
+      ],
+      "Admin Dashboard": [
+        "admin dashboard for oversight",
+        "billing management",
+        "compliance management",
+        "logging and error management"
+      ],
+      "Data Management": [
+        "auditing",
+        "logging",
+        "backups",
+        "incident response"
+      ]
+    },
+    "complexity": "complex",
+    "user_types": [
+      "Teacher",
+      "Admin"
+    ],
+    "special_requirements": [
+      "compliance with Australian legal requirements",
+      "high availability",
+      "multi-tenancy"
+    ]
+  },
+  "total_hours": 4914
+}

@@ -1,0 +1,981 @@
+{
+  "project_name": "dating app",
+  "description": "The objective of the project is to develop a cross-platform dating application that includes mobile apps for Android and iOS (built using Flutter) as well as a responsive web application, enabling users to discover, match, and communicate with potential partners across devices. The platform will allow users to register using email, mobile number, or social accounts with multi-factor authentication, create and manage profiles, define dating preferences, receive AI-driven match recommendations, and communicate through secure real-time messaging. Users will receive notifications for matches, messages, and activity updates, access safety features such as blocking and reporting, and manage subscriptions and secure payments. Administrators will operate through a web-based dashboard to manage users, moderate content, handle complaints, send notifications, monitor engagement and transactions, and generate analytical reports to ensure platform safety, scalability, and performance across both mobile and web platforms.",
+  "target_platforms": [
+    "Flutter",
+    "API",
+    "CMS"
+  ],
+  "epics": [
+    {
+      "name": "Project Configuration",
+      "description": "Initial project setup and configuration",
+      "tasks": [
+        {
+          "description": "Set up project structure and tools",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Prepare design assets for development",
+          "efforts": {
+            "Flutter": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Database Design",
+      "description": "Database schema and design",
+      "tasks": [
+        {
+          "description": "Database scheme design",
+          "efforts": {
+            "Flutter": 32,
+            "API": 40
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Database implementation",
+          "efforts": {
+            "Flutter": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Data caching",
+          "efforts": {
+            "Flutter": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Authentication",
+      "description": "User authentication and authorization system",
+      "tasks": [
+        {
+          "description": "Signup with Email",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Apple ID",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Apple ID",
+          "efforts": {
+            "Flutter": 6,
+            "API": 12
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Forgot password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Reset password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "OTP verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Resend OTP",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Mobile verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Email verification",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage app features depending on the user's role",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Profile Setup",
+      "description": "Initial profile setup for users",
+      "tasks": [
+        {
+          "description": "Setup user profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup preference details",
+          "efforts": {
+            "Flutter": 12
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup relevant verification document",
+          "efforts": {
+            "Flutter": 24
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "My Profile",
+      "description": "User profile management",
+      "tasks": [
+        {
+          "description": "View profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update profile",
+          "efforts": {
+            "Flutter": 4,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "Flutter": 8,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update mobile number",
+          "efforts": {
+            "Flutter": 4,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Change password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Logout",
+          "efforts": {
+            "Flutter": 2,
+            "API": 2
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Delete account",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Notification",
+      "description": "Push notifications and alerts",
+      "tasks": [
+        {
+          "description": "Display in-app notification list",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage read/unread status of notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Route users based on notification type",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Set up push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Handle receiving and sending push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "ElasticSearch",
+      "description": "Search functionality using Elasticsearch",
+      "tasks": [
+        {
+          "description": "setup elastic search",
+          "efforts": {
+            "Flutter": 4,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "fetch result from elastic search",
+          "efforts": {
+            "Flutter": 6,
+            "API": 40
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Index search item",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Deployment",
+      "description": "Application deployment and release",
+      "tasks": [
+        {
+          "description": "Deployment",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config"
+    },
+    {
+      "name": "Settings & Class Management",
+      "description": "From gto100 (AI-Suggested)",
+      "tasks": [
+        {
+          "description": "Syllabus upload manage",
+          "efforts": {
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "gto100 (AI-Suggested)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "gto100 (AI-Suggested)"
+    },
+    {
+      "name": "Assignments & AI Scoring",
+      "description": "From Gradetime03 (AI-Suggested)",
+      "tasks": [
+        {
+          "description": "AI scoring pipeline",
+          "efforts": {
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "Gradetime03 (AI-Suggested)",
+          "is_custom": false
+        },
+        {
+          "description": "Analytics mapping",
+          "efforts": {
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "Gradetime03 (AI-Suggested)",
+          "is_custom": false
+        },
+        {
+          "description": "Assignment creation UI",
+          "efforts": {
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "Gradetime03 (AI-Suggested)",
+          "is_custom": false
+        },
+        {
+          "description": "Question setup normalizer",
+          "efforts": {
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "Gradetime03 (AI-Suggested)",
+          "is_custom": false
+        },
+        {
+          "description": "Response ingestion",
+          "efforts": {
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "Gradetime03 (AI-Suggested)",
+          "is_custom": false
+        },
+        {
+          "description": "Teacher override flow",
+          "efforts": {
+            "CMS": 4
+          },
+          "user_types": null,
+          "source": "Gradetime03 (AI-Suggested)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "Gradetime03 (AI-Suggested)"
+    },
+    {
+      "name": "in-app Subscriptoin",
+      "description": "From OKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+      "tasks": [
+        {
+          "description": "Cancel subscription",
+          "efforts": {
+            "Flutter": 8
+          },
+          "user_types": null,
+          "source": "OKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+          "is_custom": false
+        },
+        {
+          "description": "Purchase subscription",
+          "efforts": {
+            "Flutter": 8
+          },
+          "user_types": null,
+          "source": "OKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "OKkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+    },
+    {
+      "name": "Admin Dashboard",
+      "description": "From gto100 (AI-Suggested)",
+      "tasks": [
+        {
+          "description": "User management views",
+          "efforts": {
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "gto100 (AI-Suggested)",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "gto100 (AI-Suggested)"
+    },
+    {
+      "name": "User Registration and Onboarding",
+      "description": "Implement user registration and onboarding flow.",
+      "tasks": [
+        {
+          "description": "Build user registration screen with email and password validation",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create onboarding tutorial screens for new users",
+          "efforts": {
+            "Flutter": 16,
+            "API": 12
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement user preferences setup during onboarding",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Dating Preferences Setup",
+      "description": "Allow users to set and update their dating preferences.",
+      "tasks": [
+        {
+          "description": "Build UI for users to select dating preferences",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement backend logic to save user preferences",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "AI-Driven Match Recommendations",
+      "description": "Develop AI-driven algorithms for match recommendations.",
+      "tasks": [
+        {
+          "description": "Create recommendation engine for matching users based on preferences",
+          "efforts": {
+            "Flutter": 16,
+            "API": 40
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Integrate AI model for improving match suggestions over time",
+          "efforts": {
+            "Flutter": 12,
+            "API": 32
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Real-Time Messaging",
+      "description": "Implement real-time messaging functionality between users.",
+      "tasks": [
+        {
+          "description": "Build chat interface for users to send and receive messages",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement WebSocket connection for real-time message delivery",
+          "efforts": {
+            "Flutter": 12,
+            "API": 20
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Notifications for Matches and Messages",
+      "description": "Set up notifications for new matches and incoming messages.",
+      "tasks": [
+        {
+          "description": "Implement push notifications for new matches",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create in-app notifications for received messages",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16,
+            "CMS": 8
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Safety Features",
+      "description": "Implement safety features such as blocking and reporting users.",
+      "tasks": [
+        {
+          "description": "Build user blocking functionality",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Implement reporting mechanism for inappropriate behavior",
+          "efforts": {
+            "Flutter": 12,
+            "API": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Payment Integration",
+      "description": "Integrate multiple payment methods for subscriptions.",
+      "tasks": [
+        {
+          "description": "Implement credit card payment processing",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Set up bank payment integration",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Integrate digital wallet payment options (e.g., PayPal, Apple Pay)",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Analytics and Reporting",
+      "description": "Generate analytical reports for user engagement and transactions.",
+      "tasks": [
+        {
+          "description": "Implement analytics for user engagement monitoring",
+          "efforts": {
+            "API": 24,
+            "CMS": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create reporting tools for transaction monitoring",
+          "efforts": {
+            "API": 24,
+            "CMS": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Offline Sync and Data Caching",
+      "description": "Enable offline capabilities and data synchronization.",
+      "tasks": [
+        {
+          "description": "Implement data caching for offline access",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Build background sync functionality for data updates",
+          "efforts": {
+            "Flutter": 16,
+            "API": 24
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    },
+    {
+      "name": "Localization and Multi-language Support",
+      "description": "Add localization features for multi-language support.",
+      "tasks": [
+        {
+          "description": "Implement localization framework for Flutter",
+          "efforts": {
+            "Flutter": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Create language management tools in CMS",
+          "efforts": {
+            "CMS": 16
+          },
+          "user_types": null,
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated"
+    }
+  ],
+  "generated_at": "2026-01-09T13:44:49.794938",
+  "analyzed_requirement": {
+    "project_name": "dating app",
+    "domain": "dating",
+    "features": [
+      "user registration",
+      "profile management",
+      "dating preferences setup",
+      "AI-driven match recommendations",
+      "real-time messaging",
+      "notifications for matches",
+      "notifications for messages",
+      "activity updates",
+      "safety features (blocking and reporting)",
+      "subscription management",
+      "secure payments",
+      "credit card payment",
+      "bank payment",
+      "digital wallet payment",
+      "AI-driven insights",
+      "recommendation engine",
+      "web-based dashboard for admins",
+      "user management",
+      "content moderation",
+      "complaint handling",
+      "notification sending",
+      "engagement monitoring",
+      "transaction monitoring",
+      "analytical report generation"
+    ],
+    "tech_stack": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "platforms": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "initial_epics": [
+      "User Management",
+      "Matching System",
+      "Communication",
+      "Safety Features",
+      "Subscription and Payments",
+      "Admin Dashboard",
+      "Notifications",
+      "Analytics"
+    ],
+    "epic_categories": {
+      "User Management": [
+        "user registration",
+        "profile management",
+        "dating preferences setup"
+      ],
+      "Matching System": [
+        "AI-driven match recommendations"
+      ],
+      "Communication": [
+        "real-time messaging"
+      ],
+      "Safety Features": [
+        "safety features (blocking and reporting)"
+      ],
+      "Subscription and Payments": [
+        "subscription management",
+        "secure payments",
+        "credit card payment",
+        "bank payment",
+        "digital wallet payment"
+      ],
+      "Admin Dashboard": [
+        "web-based dashboard for admins",
+        "user management",
+        "content moderation",
+        "complaint handling"
+      ],
+      "Notifications": [
+        "notifications for matches",
+        "notifications for messages",
+        "activity updates",
+        "notification sending"
+      ],
+      "Analytics": [
+        "engagement monitoring",
+        "transaction monitoring",
+        "analytical report generation"
+      ]
+    },
+    "complexity": "complex",
+    "user_types": [
+      "User",
+      "Admin"
+    ],
+    "special_requirements": [
+      "real-time features",
+      "payment integration",
+      "high availability"
+    ]
+  },
+  "total_hours": 1542
+}

@@ -1,0 +1,480 @@
+{
+  "template_name": "NUC Mobile App",
+  "domain": "utilities",
+  "description": "Nauru Utilities Corporation mobile application for electricity and water meter top-up, consumption tracking, and AI-driven insights",
+  "epics": {
+    "Project Configuration": {
+      "Set up project structure and tools": {
+        "Flutter": 8,
+        "API": 8,
+        "CMS": 4
+      },
+      "Prepare design assets for development": {
+        "Flutter": 16
+      }
+    },
+    "Database Design": {
+      "Database scheme design": {
+        "Flutter": 32,
+        "API": 40
+      },
+      "Database implementation": {
+        "Flutter": 32
+      },
+      "Data caching": {
+        "Flutter": 32
+      }
+    },
+    "iPad/Tablet": {
+      "support to iPad/Tablet": {
+        "Flutter": 40
+      }
+    },
+    "Localisation & Internationalisation": {
+      "Set up the app for multiple countries and regions": {
+        "Flutter": 40,
+        "API": 40
+      },
+      "Enable multi-language support": {
+        "API": 16
+      },
+      "List available languages and regional options": {
+        "Flutter": 8,
+        "API": 6
+      },
+      "Allow users to change language and region preferences": {
+        "Flutter": 6
+      }
+    },
+    "Location": {
+      "Show location suggestions": {
+        "Flutter": 12,
+        "API": 12
+      },
+      "Request and manage location permissions": {
+        "Flutter": 12,
+        "API": 6
+      },
+      "Access current GPS location of the device": {
+        "Flutter": 8,
+        "API": 6
+      }
+    },
+    "Onboarding": {
+      "Onboarding": {
+        "Flutter": 16
+      },
+      "Splash Screen": {
+        "Flutter": 4
+      },
+      "Landing screen": {
+        "Flutter": 6
+      },
+      "Main menu for easy navigation within the app": {
+        "Flutter": 4
+      }
+    },
+    "CMS Pages": {
+      "Load CMS pages within the app using in-app browser": {
+        "Flutter": 4
+      },
+      "Show key pages like Terms & Conditions and Privacy Policy": {
+        "Flutter": 2,
+        "API": 6
+      },
+      "Configure settings for individual CMS pages": {
+        "Flutter": 2,
+        "API": 8
+      },
+      "Manage and update pages from the admin panel": {
+        "CMS": 12
+      }
+    },
+    "Authentication": {
+      "Email/Mobile signup": {
+        "Flutter": 12,
+        "API": 8
+      },
+      "email/Mobile login": {
+        "Flutter": 8,
+        "API": 8,
+        "CMS": 6
+      },
+      "OTP verification": {
+        "Flutter": 16,
+        "API": 16
+      },
+      "resend OTP": {
+        "Flutter": 4,
+        "API": 4
+      },
+      "Reset password": {
+        "Flutter": 4,
+        "API": 4,
+        "CMS": 4
+      },
+      "Forgot password": {
+        "Flutter": 4,
+        "API": 4,
+        "CMS": 4
+      }
+    },
+    "Profile Setup and Management": {
+      "Profile setup": {
+        "Flutter": 16,
+        "API": 16
+      },
+      "Admin access to view, edit, and manage app users and profiles": {
+        "API": 16,
+        "CMS": 32
+      }
+    },
+    "My Profile": {
+      "View profile": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "Update profile": {
+        "Flutter": 4,
+        "API": 8
+      },
+      "Settings": {
+        "Flutter": 8,
+        "API": 6
+      },
+      "Update email": {
+        "Flutter": 4,
+        "API": 4
+      },
+      "Update mobile number": {
+        "Flutter": 4,
+        "API": 6
+      },
+      "Change password": {
+        "Flutter": 4,
+        "API": 4
+      },
+      "Logout": {
+        "Flutter": 2,
+        "API": 2
+      },
+      "Delete account": {
+        "Flutter": 6,
+        "API": 6
+      }
+    },
+    "Account Linking": {
+      "Add/remove Electricity meter": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "Add/remove water tank accounts": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "List linked account": {
+        "Flutter": 8,
+        "API": 8,
+        "CMS": 8
+      },
+      "View account detail": {
+        "Flutter": 8,
+        "API": 8,
+        "CMS": 8
+      }
+    },
+    "Card Payment Setup": {
+      "Add credit card details": {
+        "Flutter": 16,
+        "API": 24
+      },
+      "Update credit card details": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "Remove credit card details": {
+        "Flutter": 4,
+        "API": 4
+      },
+      "View list of saved cards": {
+        "Flutter": 12,
+        "API": 8
+      },
+      "Set a primary (default) card for payments": {
+        "Flutter": 4,
+        "API": 4
+      }
+    },
+    "Bank Payment Setup": {
+      "Add bank details": {
+        "Flutter": 16,
+        "API": 24
+      },
+      "Update bank details": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "Remove bank details": {
+        "Flutter": 4,
+        "API": 4
+      },
+      "View list of saved bank": {
+        "Flutter": 12,
+        "API": 8
+      },
+      "Set a primary (default) bank for payments": {
+        "Flutter": 4,
+        "API": 4
+      }
+    },
+    "Paypal integration": {
+      "Paypal integration": {
+        "Flutter": 40,
+        "API": 40
+      }
+    },
+    "Apple pay integration": {
+      "Integrate Apple Pay SDK into the app": {
+        "Flutter": 40
+      },
+      "Configure Apple Pay in the Apple Developer Console": {
+        "API": 24
+      },
+      "Verify payment receipts securely": {
+        "API": 24
+      }
+    },
+    "Google pay integration": {
+      "Integrate Google Pay SDK into the app": {
+        "Flutter": 40
+      },
+      "Set up Google Pay in the Google Play Console": {
+        "API": 24
+      },
+      "Verify payment receipts securely": {
+        "API": 24
+      }
+    },
+    "NUC Backend System Integration": {
+      "Backend system integration": {
+        "API": 40
+      }
+    },
+    "Future Consumption Prediction": {
+      "Data Collection & Preparation": {
+        "API": 40
+      },
+      "Feature Engineering": {
+        "API": 40
+      },
+      "Model Selection & Training": {
+        "API": 80
+      },
+      "Model Evaluation": {
+        "API": 40
+      },
+      "API Integration": {
+        "API": 40
+      }
+    },
+    "Optimal Top-Up Recommendation": {
+      "Define Top-Up Logic": {
+        "API": 16
+      },
+      "Integrate with Prediction Model": {
+        "API": 16
+      },
+      "Generate Recommendations": {
+        "API": 32
+      },
+      "API implementation": {
+        "API": 16
+      }
+    },
+    "Abnormal Consumption Detection": {
+      "Define abnormal behavior": {
+        "API": 32
+      },
+      "Data Preparation": {
+        "API": 40
+      },
+      "Model development": {
+        "API": 80
+      },
+      "Detection & alert logic": {
+        "API": 32
+      },
+      "Api integration": {
+        "API": 16
+      }
+    },
+    "Trend Analysis & Pattern Detection": {
+      "Data preparation": {
+        "API": 40
+      },
+      "Trend analysis": {
+        "API": 80
+      },
+      "Pattern detection": {
+        "API": 80
+      },
+      "Insight & Recomendation generation": {
+        "API": 40
+      },
+      "Validate insights and recomendations": {
+        "API": 40
+      },
+      "API implementation": {
+        "API": 32
+      }
+    },
+    "Top-Up Functionality": {
+      "Topup electricity": {
+        "Flutter": 12,
+        "API": 12
+      },
+      "Topup water sales service": {
+        "Flutter": 12,
+        "API": 12
+      },
+      "View Topup recommendations": {
+        "Flutter": 12,
+        "API": 8
+      },
+      "Select payment method": {
+        "Flutter": 8
+      },
+      "Process payment": {
+        "API": 24
+      },
+      "Handle success/failure": {
+        "API": 32
+      },
+      "Generate receipt": {
+        "API": 16
+      },
+      "Save transaction log": {
+        "API": 12
+      },
+      "Send receipt to user and customer services": {
+        "API": 8
+      },
+      "Update payments in NUC billing system": {
+        "API": 8
+      }
+    },
+    "Usage History": {
+      "View electricity consumptions": {
+        "Flutter": 12,
+        "API": 12
+      },
+      "View Water consumptions": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "Implement daily/Weekly": {
+        "Flutter": 8,
+        "API": 8
+      },
+      "Filter by date/month": {
+        "Flutter": 8,
+        "API": 12
+      },
+      "Filter by linked accounts": {
+        "Flutter": 8,
+        "API": 12
+      },
+      "Track usage patterns": {
+        "API": 16,
+        "CMS": 32
+      },
+      "Generate usage report": {
+        "API": 24,
+        "CMS": 8
+      },
+      "View usage patterns/insights and recomendations": {
+        "Flutter": 24,
+        "API": 8
+      }
+    },
+    "Transactions": {
+      "View full transaction history": {
+        "Flutter": 12,
+        "API": 12,
+        "CMS": 16
+      },
+      "See detailed information for each transaction": {
+        "Flutter": 8,
+        "API": 6,
+        "CMS": 8
+      },
+      "Filter or search transactions by date, type, or keyword": {
+        "Flutter": 6,
+        "API": 6,
+        "CMS": 6
+      },
+      "Download transaction records as PDF files": {
+        "Flutter": 8,
+        "API": 16,
+        "CMS": 12
+      }
+    },
+    "Alerts & Notifications": {
+      "Route users based on notification type": {
+        "Flutter": 16,
+        "API": 8
+      },
+      "Handle receiving and sending push notifications": {
+        "Flutter": 32,
+        "API": 16
+      },
+      "Set up push notifications": {
+        "Flutter": 16,
+        "API": 12,
+        "CMS": 8
+      },
+      "Display in-app notification list": {
+        "Flutter": 8,
+        "API": 8,
+        "CMS": 8
+      },
+      "Manage read/unread status of notifications": {
+        "Flutter": 8,
+        "API": 8,
+        "CMS": 4
+      },
+      "Send targeted notifications": {
+        "API": 16,
+        "CMS": 8
+      },
+      "Manage targeted notifications": {
+        "API": 16,
+        "CMS": 32
+      }
+    },
+    "Offline Sync Feature": {
+      "Handle data while offline": {
+        "Flutter": 24,
+        "API": 32
+      },
+      "Sync and optimise data for performance": {
+        "Flutter": 16,
+        "API": 24
+      },
+      "Check internet connection for sync readiness": {
+        "Flutter": 16
+      },
+      "Enable background syncing when online": {
+        "Flutter": 32,
+        "API": 8
+      }
+    },
+    "Deployment": {
+      "Deployment": {
+        "Flutter": 24,
+        "API": 8,
+        "CMS": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,942 @@
+{
+  "template_name": "Gradetime Application",
+  "domain": "education",
+  "description": "AI-powered grading and marking platform for teachers with integrations for Google Classroom, Canvas, and Turnitin",
+  "epics": {
+    "Project Configuration": {
+      "Set up project structure and tools": {
+        "Web App": 8,
+        "API": 8,
+        "CMS": 4
+      },
+      "Prepare design assets for development": {
+        "Web App": 16
+      },
+      "Build layout using HTML/CSS": {
+        "Web App": 100
+      },
+      "Ensure responsive design for all devices": {
+        "Web App": 60
+      }
+    },
+    "Database Design": {
+      "Data caching": {
+        "Web App": 32
+      },
+      "Database scheme design": {
+        "API": 40
+      },
+      "Database implementation": {
+        "API": 16
+      }
+    },
+    "CMS Pages": {
+      "Load CMS pages within the app using in-app browser": {
+        "Web App": 8,
+        "API": 4
+      },
+      "Show key pages like Terms & Conditions and Privacy Policy": {
+        "API": 6
+      },
+      "Configure settings for individual CMS pages": {
+        "API": 8,
+        "CMS": 6
+      },
+      "Manage and update pages from the admin panel": {
+        "API": 8,
+        "CMS": 12
+      }
+    },
+    "Authentication": {
+      "Signup with Email": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Signup with Google": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Login with email": {
+        "Web App": 4,
+        "API": 4,
+        "CMS": 8
+      },
+      "Login with Google": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Reset password": {
+        "Web App": 4,
+        "API": 4,
+        "CMS": 4
+      },
+      "Forgot passowrd": {
+        "Web App": 4,
+        "API": 4,
+        "CMS": 4
+      },
+      "OTP verification": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Resend OTP": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Mobile verfication": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Email verfication": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Manage app features depending on the user's role": {
+        "Web App": 6,
+        "API": 14
+      },
+      "MFA": {
+        "Web App": 12,
+        "API": 16
+      }
+    },
+    "Profile Setup": {
+      "Setup user profile": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Setup preference details": {
+        "Web App": 8,
+        "API": 6
+      }
+    },
+    "My Profile": {
+      "View profile": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Update profile": {
+        "Web App": 4,
+        "API": 8
+      },
+      "Settings": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Update email": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Update mobile number": {
+        "Web App": 4,
+        "API": 6
+      },
+      "Change password": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Logout": {
+        "Web App": 2,
+        "API": 2
+      },
+      "Delete account": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Update preferences": {
+        "Web App": 12,
+        "API": 8
+      }
+    },
+    "Email Notification": {
+      "Sending email notifications": {
+        "Web App": 8
+      },
+      "Set up email notifications": {
+        "API": 12
+      },
+      "Manage email template": {
+        "API": 12,
+        "CMS": 40
+      }
+    },
+    "Notification": {
+      "Display in-app notification list": {
+        "Web App": 8,
+        "API": 8,
+        "CMS": 8
+      },
+      "Manage read/unread status of notifications": {
+        "Web App": 8,
+        "API": 8,
+        "CMS": 4
+      },
+      "Route users based on notification type": {
+        "Web App": 16,
+        "API": 8
+      },
+      "Handle receiving and sending push notifications": {
+        "Web App": 8,
+        "API": 16
+      }
+    },
+    "Elastic Search": {
+      "setup elastic search": {
+        "Web App": 4,
+        "API": 16
+      },
+      "fetch result from elastic search": {
+        "Web App": 6,
+        "API": 40
+      },
+      "Index search item": {
+        "Web App": 6,
+        "API": 32
+      }
+    },
+    "Dashboard - Teacher": {
+      "My Classes Cards": {
+        "Web App": 24,
+        "API": 12
+      },
+      "Recent Assignments List": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Class Overview Page details": {
+        "Web App": 14,
+        "API": 8
+      },
+      "Metrics cards": {
+        "Web App": 8,
+        "API": 12
+      },
+      "Class Assignments table": {
+        "Web App": 24,
+        "API": 12
+      },
+      "Export Class Data": {
+        "Web App": 18,
+        "API": 6
+      }
+    },
+    "Rubric Management - Teacher": {
+      "Upload Rubrics": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Fetch Rubric Library": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Clone Rubric Stock": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Rubric Creator  (AI)": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Edit Rubric": {
+        "Web App": 12,
+        "API": 8
+      },
+      "Delete Rubric": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Filters & Search": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Rubric Editor": {
+        "Web App": 16,
+        "API": 8
+      }
+    },
+    "File Upload System - Teacher": {
+      "Upload file": {
+        "Web App": 18,
+        "API": 16
+      },
+      "Download File": {
+        "Web App": 6,
+        "API": 8
+      },
+      "Delete file": {
+        "Web App": 4,
+        "API": 4
+      }
+    },
+    "Assignment Types & Marking Flows - Teacher": {
+      "Extended Response (Essays & Long-Form Tasks)": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Add inline comment": {
+        "Web App": 16
+      },
+      "Edit Inline comment": {
+        "Web App": 8
+      },
+      "Delete inline comment": {
+        "Web App": 4
+      },
+      "highlight strengths and weaknesses in the text": {
+        "Web App": 14
+      },
+      "Adjust criterion scores and overall score": {
+        "Web App": 6
+      },
+      "Generated and display AI feedbacks": {
+        "Web App": 8,
+        "API": 16
+      },
+      "Edit Feedback summary": {
+        "Web App": 12
+      },
+      "Extract student answer and mapping": {
+        "Web App": 10,
+        "API": 6
+      },
+      "Fed data to AI engine": {
+        "Web App": 8,
+        "API": 14
+      },
+      "Analytics Mapping": {
+        "Web App": 4,
+        "API": 6
+      },
+      "Short Answer scoring": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Generate AI score and feedback for short answer": {
+        "Web App": 16,
+        "API": 8
+      },
+      "Teacher capabilities for Short answer": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Multiple Choice (MCQ) scoring": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Question setup for MCQ": {
+        "Web App": 16,
+        "API": 12
+      },
+      "Teacher Capabilities for MCQ": {
+        "Web App": 16,
+        "API": 14
+      },
+      "Generate AI score for MCQ": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Student responses for MCQ": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Edit Assignment": {
+        "Web App": 12,
+        "API": 6
+      }
+    },
+    "Settings & Class Management - Teacher": {
+      "Account View": {
+        "Web App": 16,
+        "API": 6
+      },
+      "Class List View": {
+        "Web App": 18,
+        "API": 8
+      },
+      "Class Details view": {
+        "Web App": 24,
+        "API": 6
+      },
+      "Enable/Disable Plagiarism Checker": {
+        "Web App": 4,
+        "API": 2
+      }
+    },
+    "Grading Defaults & Style Guide - Teacher": {
+      "Set Default grading mode": {
+        "Web App": 18,
+        "API": 4
+      },
+      "Feedback detail preferences": {
+        "Web App": 16,
+        "API": 8
+      },
+      "Mark uploaded essays": {
+        "Web App": 4,
+        "API": 2
+      },
+      "Style Guide": {
+        "Web App": 16,
+        "API": 24
+      }
+    },
+    "OCR Integration - Teacher": {
+      "Implement OCR system": {
+        "Web App": 32
+      },
+      "Validate data extractions": {
+        "Web App": 12
+      },
+      "Error handling & fallback strategy": {
+        "Web App": 6
+      },
+      "Field mapping": {
+        "API": 24
+      },
+      "Fetching data to AI": {
+        "API": 8
+      },
+      "Retrieving data from AI": {
+        "API": 8
+      }
+    },
+    "Marking Review & Individual Results - Teacher": {
+      "Class Results (Per Assignment)": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Export results": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Individual Results (Per Student)": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Edit/delete AI comments": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Add new comments": {
+        "Web App": 6,
+        "API": 6
+      },
+      "List Results": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Search and Filter Results": {
+        "Web App": 8,
+        "API": 6
+      }
+    },
+    "Student Analytics - Teacher": {
+      "Overall score trend": {
+        "Web App": 24,
+        "API": 8
+      },
+      "Student Progress Ai Summary": {
+        "Web App": 14,
+        "API": 12
+      },
+      "Key strengths and weaknesses": {
+        "Web App": 16,
+        "API": 6
+      },
+      "Answer quality indicators": {
+        "Web App": 12,
+        "API": 2
+      },
+      "Misconception tracker": {
+        "Web App": 10,
+        "API": 2
+      },
+      "Private teacher notes": {
+        "Web App": 4,
+        "API": 2
+      },
+      "Show Student profile PDF": {
+        "Web App": 14,
+        "API": 6
+      }
+    },
+    "Class Analytics - Teacher": {
+      "Grade distribution graph": {
+        "Web App": 24,
+        "API": 8
+      },
+      "Overall class trend graph": {
+        "Web App": 16,
+        "API": 6
+      },
+      "AI-generated class summary": {
+        "Web App": 16,
+        "API": 12
+      },
+      "View and show PDF report": {
+        "Web App": 12,
+        "API": 6
+      },
+      "Class strengths and weaknesses": {
+        "Web App": 14,
+        "API": 2
+      },
+      "Student performance overview table": {
+        "Web App": 14,
+        "API": 6
+      }
+    },
+    "Google Classroom Integration": {
+      "Grade Push-Back to Google Classroom": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Fetch & Display Classroom Classes": {
+        "Web App": 16,
+        "API": 6
+      },
+      "Class Import & Mapping": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Fetch GC assignments per class": {
+        "Web App": 16,
+        "API": 8
+      },
+      "Ongoing Sync Logic": {
+        "Web App": 16,
+        "API": 6
+      },
+      "Assignment Discovery & Selection": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Configure and setup google Classroom API": {
+        "API": 8
+      },
+      "Google OAuth & Teacher Account Linking": {
+        "API": 6
+      },
+      "Permission Enforcement & Guardrails": {
+        "API": 6
+      },
+      "Teacher Account Mapping": {
+        "API": 8
+      }
+    },
+    "Canvas Integration": {
+      "Teacher & Course Identity Mapping": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Course ↔ Class Alignment": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Manual & Incremental Sync": {
+        "Web App": 24,
+        "API": 6
+      },
+      "Fetch Canvas Assignments": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Pre-Grade Push Validation": {
+        "Web App": 8,
+        "API": 4
+      },
+      "Grade Transformation & Mapping": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Grade Push Execution": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Configure and setup google Canvas API": {
+        "API": 6
+      },
+      "Permission & Access Guardrails": {
+        "API": 4
+      },
+      "LTI Authentication & Secure Launch": {
+        "API": 8
+      },
+      "Initial Roster Import": {
+        "API": 6
+      },
+      "Assignment Mapping & Persistence": {
+        "API": 6
+      },
+      "Pre-Link Eligibility Checks": {
+        "API": 6
+      }
+    },
+    "Turnitin Integration": {
+      "Enablement & Guardrails": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Class-Level Plagiarism Toggle": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Results Display & Indicators": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Configure and setup google Turnitin API": {
+        "API": 6
+      },
+      "Turnitin Credential & Policy Configuration": {
+        "API": 6
+      }
+    },
+    "Admin Dashboard - School": {
+      "View basic statistics and key information": {
+        "Web App": 40,
+        "API": 16
+      },
+      "Adjust application settings": {
+        "Web App": 12
+      }
+    },
+    "Admin User Management - School": {
+      "Listing": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Add/edit": {
+        "Web App": 12,
+        "API": 8
+      },
+      "Delete": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Manage role and permission": {
+        "Web App": 8,
+        "API": 12
+      }
+    },
+    "Teacher Management - School": {
+      "Teacher Listing": {
+        "Web App": 8,
+        "API": 6
+      },
+      "Add/edit Teacher account": {
+        "Web App": 16,
+        "API": 8
+      },
+      "View details": {
+        "Web App": 8,
+        "API": 8
+      },
+      "Delete": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Search and filter": {
+        "Web App": 8,
+        "API": 8
+      },
+      "View High level activity metrics": {
+        "Web App": 14,
+        "API": 8
+      },
+      "View student records": {
+        "Web App": 12,
+        "API": 8
+      },
+      "View class enrollments": {
+        "Web App": 12,
+        "API": 8
+      }
+    },
+    "Students Management - School": {
+      "Add Students": {
+        "Web App": 16,
+        "API": 6
+      },
+      "Edit Student": {
+        "Web App": 10,
+        "API": 4
+      },
+      "Remove Student": {
+        "Web App": 4,
+        "API": 2
+      },
+      "Upload field mapping ( assignment completed, average grade)": {
+        "Web App": 14,
+        "API": 8
+      },
+      "Class Syllabus": {
+        "Web App": 12,
+        "API": 14
+      }
+    },
+    "Role-base permission - School": {
+      "Edit permission": {
+        "Web App": 6,
+        "API": 4
+      },
+      "List Role": {
+        "Web App": 6,
+        "API": 4
+      },
+      "View Role": {
+        "Web App": 6,
+        "API": 4
+      },
+      "Add Role": {
+        "Web App": 6,
+        "API": 6
+      },
+      "Delete permission": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Add permission": {
+        "Web App": 8,
+        "API": 12
+      },
+      "View permission": {
+        "Web App": 6,
+        "API": 8
+      },
+      "Delete Role": {
+        "Web App": 2,
+        "API": 2
+      },
+      "Edit Role": {
+        "Web App": 4,
+        "API": 4
+      }
+    },
+    "Subscription & billing - School": {
+      "Subscription usage metrics": {
+        "Web App": 18,
+        "API": 8
+      },
+      "Subscription detail": {
+        "Web App": 10,
+        "API": 6
+      },
+      "Current subscription plan": {
+        "Web App": 14,
+        "API": 6
+      },
+      "Track subscription plans": {
+        "Web App": 6,
+        "API": 4
+      },
+      "Purchase Subscription": {
+        "Web App": 8,
+        "API": 12
+      },
+      "Purchase History": {
+        "Web App": 16,
+        "API": 14
+      }
+    },
+    "Class & course management - School": {
+      "Add Class and course": {
+        "Web App": 16,
+        "API": 8
+      },
+      "View class and course": {
+        "Web App": 14,
+        "API": 6
+      },
+      "Edit/update class": {
+        "Web App": 12,
+        "API": 4
+      },
+      "Edit/update course": {
+        "Web App": 10,
+        "API": 4
+      },
+      "Class details": {
+        "Web App": 14,
+        "API": 4
+      },
+      "view enrolments and curricula": {
+        "Web App": 16,
+        "API": 6
+      }
+    },
+    "Data & compliance - School": {
+      "Export school data": {
+        "Web App": 6,
+        "API": 4
+      },
+      "Data access logs": {
+        "Web App": 6,
+        "API": 2
+      },
+      "Error reporting": {
+        "Web App": 8,
+        "API": 6
+      }
+    },
+    "Audit log - School": {
+      "Add audit log": {
+        "Web App": 32,
+        "API": 32
+      },
+      "List Audit logs": {
+        "Web App": 6,
+        "API": 6
+      },
+      "View log details": {
+        "Web App": 8,
+        "API": 6
+      }
+    },
+    "School Level Analytics - School": {
+      "Performace views": {
+        "Web App": 16,
+        "API": 8
+      },
+      "Teacher analytics": {
+        "Web App": 16,
+        "API": 12
+      },
+      "Cohort comparisons": {
+        "Web App": 16,
+        "API": 8
+      }
+    },
+    "Integration Management - School": {
+      "Toggle integrations": {
+        "Web App": 8,
+        "API": 14
+      },
+      "View integrations": {
+        "Web App": 8,
+        "API": 14
+      }
+    },
+    "Card Payment Setup - School": {
+      "Remove credit card details": {
+        "Web App": 4,
+        "API": 4
+      },
+      "Set a primary (default) card for payments": {
+        "Web App": 4,
+        "API": 4
+      },
+      "View list of saved cards": {
+        "Web App": 12,
+        "API": 8
+      },
+      "Add credit card details": {
+        "Web App": 16,
+        "API": 24
+      },
+      "Update credit card details": {
+        "Web App": 8,
+        "API": 8
+      }
+    },
+    "Admin User Management": {
+      "Listing": {
+        "API": 6,
+        "CMS": 6
+      },
+      "Add/edit": {
+        "API": 8,
+        "CMS": 12
+      },
+      "Delete": {
+        "API": 4,
+        "CMS": 4
+      },
+      "Manage permission": {
+        "API": 8,
+        "CMS": 6
+      }
+    },
+    "School Management": {
+      "Add School": {
+        "API": 8,
+        "CMS": 8
+      },
+      "Edit School": {
+        "API": 6,
+        "CMS": 6
+      },
+      "View School": {
+        "API": 6,
+        "CMS": 8
+      },
+      "List School": {
+        "API": 6,
+        "CMS": 6
+      },
+      "Delete School": {
+        "API": 4,
+        "CMS": 4
+      },
+      "Filter and Search": {
+        "API": 6,
+        "CMS": 8
+      }
+    },
+    "Admin Dashboard": {
+      "View basic statistics and key information": {
+        "API": 16,
+        "CMS": 40
+      },
+      "Adjust application settings": {
+        "CMS": 12
+      }
+    },
+    "Transactions": {
+      "View full transaction history": {
+        "Web App": 12,
+        "API": 12,
+        "CMS": 16
+      },
+      "See detailed information for each transaction": {
+        "Web App": 8,
+        "API": 6,
+        "CMS": 8
+      },
+      "Filter or search transactions by date, type, or keyword": {
+        "Web App": 6,
+        "API": 6,
+        "CMS": 6
+      },
+      "Download transaction records as PDF files": {
+        "Web App": 8,
+        "API": 16,
+        "CMS": 12
+      }
+    },
+    "Backend Configurations and Authentication": {
+      "Forgot password to admin": {
+        "CMS": 4
+      },
+      "Change password": {
+        "CMS": 4
+      },
+      "Logout": {
+        "CMS": 2
+      },
+      "Backend template management": {
+        "CMS": 4
+      },
+      "Login": {
+        "CMS": 6
+      }
+    },
+    "Deployment": {
+      "Deployment": {
+        "Web App": 8,
+        "API": 8,
+        "CMS": 8
+      }
+    }
+  }
+}
