@@ -6,7 +6,7 @@ def is_similar_epic_name(name1: str, name2: str) -> bool:
     Check if two epic names are semantically similar to avoid duplicates.
     
     Examples:
-    - "Profile Setup" and "My Profile" -> Similar
+    
     - "User Profile" and "Profile Management" -> Similar
     - "Payment" and "Payment Gateway" -> Similar
     - "Authentication" and "MT - Authentication" -> Similar

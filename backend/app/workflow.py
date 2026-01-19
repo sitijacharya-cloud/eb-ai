@@ -10,7 +10,7 @@ from .agents import (
     retrieve_similar_epic_node,
     generate_custom_epic_node,
 )
-from .models.schemas import ProjectRequirement, ProjectEstimation, Platform
+from .models.schemas import ProjectRequirement, ProjectEstimation
 from .services.mandatory_epics_service import get_mandatory_epics_service
 
 logger = logging.getLogger(__name__)

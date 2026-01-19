@@ -1,0 +1,2508 @@
+{
+  "project_name": "wedv2",
+  "description": "The project aims to create a wedding inspiration mobile app that serves as a map-based, Pinterest-style platform. The app will allow users to discover, save, and share wedding photo locations and inspirations. With a focus on community-based content, the app enables brides and grooms to explore real wedding photos, interact with photographers and venues, and easily share their findings with their wedding team. The platform will provide personalized content through a questionnaire at the start and will feature a public feed for discovering content. Users can follow other users and create curated feeds based on their interests, allowing for a more tailored experience. Social features like commenting, liking, bookmarking, and sharing will further engage users and keep the platform dynamic.\nPlatform:\nMobile app (iOS and Android)\nUser Types and Descriptions:\nBrides & Grooms (End Users)\nDescription: Brides and grooms who are in the process of planning their weddings will use the app to find inspiration for wedding photos, discover wedding venues, and gather location-based photo ideas. They will save and organize their favorite finds, collaborate with their wedding team, and interact with other users to get inspiration and recommendations.\nPurpose: To explore wedding photography inspiration, save and share locations, and create a personalized feed based on preferences, making wedding planning easier.\nPhotographers & Videographers (Service Providers)\nDescription: Photographers and videographers will create profiles to showcase their work, tag their photos with locations, and gain exposure by sharing their portfolio with brides and grooms. They will be able to interact with potential clients through the platform by receiving inquiries or collaboration requests.\nPurpose: To gain exposure, advertise services, and build a professional presence by sharing wedding photos and offering their services.\nVenues (Business Profiles)\nDescription: Venues will create business profiles where they can list their wedding services, showcase wedding photo spots, and provide recommendations for ideal locations within the venue. They will promote their venue by uploading images of weddings held there.\nPurpose: To attract brides and grooms by showcasing wedding venues, offering photo spot suggestions, and gaining visibility within the app.\nAdmin (App Administrator)\nDescription: The app administrator is responsible for managing user profiles, overseeing content moderation, ensuring the app runs smoothly, and monitoring analytics. They will also manage monetization, handle support requests, and enforce community guidelines.\nPurpose: To ensure proper functioning, manage content, and oversee user support and monetization strategies.\nTechnical Functional Features of Each User:\n1. Bride/Groom (Wedding Planner)\nThese are the main features for the bride and groom user types:\nAccount Creation & Questionnaire\nUsers create an account via email sign-up.\nUpon sign-up, a personalized questionnaire is presented to gather preferences such as:\nState of mind (e.g., excited, stressed)\nWedding venue preferences\nPhotography style preferences (e.g., candid, formal)\nLocation\nThe questionnaire responses will be used to curate personalized content, including photos, venues, and vendors.\nPersonalized Content Feed\nThe app will generate a curated content feed based on user preferences and saved inspirations from the questionnaire.\nThis feed will display relevant venues, photo locations, and photographer portfolios.\nCommunity Interaction\nUsers can interact with other brides/grooms for inspiration, advice, or suggestions under public posts.\nAbility to post questions and share tips within a community of wedding planners.\nSearch & Filter Functionality\nUsers can search and filter through wedding venues, photo spots, and locations based on the following:\nLocation (city, state, or venue name)\nWedding theme (e.g., rustic, modern)\nVenue type (e.g., outdoor, indoor)\nThe search results will display photo spots for specific venues or areas surrounding a selected venue.\nSave Inspirations\nUsers can save photos of wedding venues, locations, and inspiration pictures to their personal boards (bookmarks).\nSaved items can be categorized and edited (e.g., \u201cBridal Photos\u201d or \u201cReception Locations\u201d).\nUsers will be able to view and revisit their saved content at any time.\nShare Inspirations\nUsers can share saved photos and inspiration boards directly with their photographer, family, or friends via:\nEmail links\nIn-app sharing feature\nSocial media sharing (Instagram, Pinterest, Facebook)\nAbility to send inspiration directly to photographers using a direct messaging feature inside the app.\nCreate & Export Wedding Day Timeline\nUsers can create a timeline (run sheet) of their wedding day by dragging and dropping saved photos or venues into specific time slots (e.g., Ceremony, Reception).\nThis timeline can be exported to PDF format or shared as a link with vendors or wedding planners.\nSubscription Model\nAccess to premium content (exclusive photo spots, venue listings) through a subscription model.\nUsers can opt for a monthly or annual subscription for access to additional tools and inspiration content.\nPayment gateway integration (e.g., Stripe or PayPal) to manage subscriptions and payments.\n2. Photographer/Videographer\nFor the photographers and videographers, these are the technical features:\nProfile Creation\nPhotographers can create a detailed profile showcasing their portfolio.\nProfiles will include:\nBio and background information\nGallery of photos (e.g., wedding photos, location-specific shoots)\nContact details and booking information\nRate card (if applicable)\nPortfolio Uploads\nPhotographers can upload photos and videos of their work.\nThe ability to tag photos with location data (specific wedding venues or photo spots) to increase discoverability.\nPhoto permissions: Photographers can only upload images with user permission (e.g., from the bride/groom).\nPhoto Engagement Analytics\nEngagement statistics: Track likes, comments, and shares on uploaded photos.\nLead Generation\nPhotographers will be featured as part of a verified professional list for specific wedding venues or locations.\nRequest/Contact button on each photographer\u2019s profile for direct booking inquiries.\nProfile Updates\nPhotographers can regularly update their portfolios with new work.\nThey will have the ability to respond to reviews from clients and build their reputation within the community.\n3. Venue (Business Profile)\nFor venues, the following technical features are needed:\nVenue Profile Creation\nVenues can create a business profile with the following information:\nVenue name, description, and services\nGallery of available photo spots (e.g., gardens, reception halls)\nContact details (address, phone number, website)\nPricing details (optional)\nPhoto and Location Tagging\nVenues can tag specific locations within the venue (e.g., \u201cGarden Spot 1\u201d or \u201cReception Area 3\u201d) so that users (brides/grooms) can search for photos by venue or photo spot.\nPromotions & Special Offers\nVenues can post promotions (e.g., discounts, special packages) or events directly on their profile page.\nVenues can advertise on the app to gain visibility and attract users.\nAnalytics Dashboard\nVenues can access analytics to see how often their venue is being viewed and interacted with.\n4. Admin (Platform Management)\nFor platform admins, the key features are:\nCentralized Dashboard\nAdmins have access to a comprehensive dashboard that allows them to manage all aspects of the platform.\nView user activity, photo uploads, venue listings, and overall engagement across the app.\nUser & Content Moderation\nAdmins can approve or reject user profiles, photographer profiles, venue listings, and uploaded photos.\nContent flagged by users can be reviewed, and inappropriate content can be removed.\nSubscription & Payment Management\nAdmins manage the subscription model, ensuring users are billed correctly for premium features.\nInvoice generation for venue advertisements and photographer subscriptions.\nAbility to provide discounts or special offers for users or businesses.\nReporting & Analytics\nAdmins can generate reports on user activity, engagement statistics, and revenue generation.\nReal-time analytics to track growth, subscriptions, and content interactions.\nEmail & Notification Management\nAdmins can send system-wide notifications for app updates, promotions, and maintenance alerts.\nEmail automation for welcome messages, subscription reminders, and event notifications.\nIntegrations Needed\nPayment Gateway:\nFor subscriptions and advertising fees (e.g., Stripe, PayPal).\nMap Integration:\nApple Maps (iOS) for location-based searches and tagging of photo spots.\nSocial Media Integration:\nInstagram, Pinterest, Facebook for sharing inspiration photos.\n",
+  "target_platforms": [
+    "Flutter",
+    "API",
+    "CMS"
+  ],
+  "epics": [
+    {
+      "name": "Project Configuration",
+      "description": "Initial project setup and configuration",
+      "tasks": [
+        {
+          "description": "Set up project structure and tools",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Prepare design assets for development",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Database Design",
+      "description": "Database schema and design",
+      "tasks": [
+        {
+          "description": "Database scheme design",
+          "efforts": {
+            "Flutter": 32,
+            "API": 40
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Database implementation",
+          "efforts": {
+            "Flutter": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Data caching",
+          "efforts": {
+            "Flutter": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Authentication",
+      "description": "User authentication and authorization system",
+      "tasks": [
+        {
+          "description": "Signup with Email",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Apple ID",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Signup with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Apple ID",
+          "efforts": {
+            "Flutter": 6,
+            "API": 12
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Login with Google",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Forgot password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Reset password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "OTP verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Resend OTP",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Mobile verification",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Email verification",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage app features depending on the user's role",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Profile Setup",
+      "description": "Initial profile setup for users",
+      "tasks": [
+        {
+          "description": "Setup user profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup preference details",
+          "efforts": {
+            "Flutter": 12
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Setup relevant verification document",
+          "efforts": {
+            "Flutter": 24
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "My Profile",
+      "description": "User profile management",
+      "tasks": [
+        {
+          "description": "View profile",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update profile",
+          "efforts": {
+            "Flutter": 4,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "Flutter": 8,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update email",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Update mobile number",
+          "efforts": {
+            "Flutter": 4,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Change password",
+          "efforts": {
+            "Flutter": 4,
+            "API": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Logout",
+          "efforts": {
+            "Flutter": 2,
+            "API": 2
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Delete account",
+          "efforts": {
+            "Flutter": 6,
+            "API": 6
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Notification",
+      "description": "Push notifications and alerts",
+      "tasks": [
+        {
+          "description": "Display in-app notification list",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Manage read/unread status of notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8,
+            "CMS": 4
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Route users based on notification type",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Set up push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Handle receiving and sending push notifications",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "ElasticSearch",
+      "description": "Search functionality using Elasticsearch",
+      "tasks": [
+        {
+          "description": "setup elastic search",
+          "efforts": {
+            "Flutter": 4,
+            "API": 16
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "fetch result from elastic search",
+          "efforts": {
+            "Flutter": 6,
+            "API": 40
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        },
+        {
+          "description": "Index search item",
+          "efforts": {
+            "Flutter": 6,
+            "API": 32
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Deployment",
+      "description": "Application deployment and release",
+      "tasks": [
+        {
+          "description": "Deployment",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "mandatory_config",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": true,
+      "source_template": "mandatory_config",
+      "user_types": null
+    },
+    {
+      "name": "Onboarding and profile",
+      "description": "Covers onboarding, interests, preferences, and profile setup for all user types.",
+      "tasks": [
+        {
+          "description": "Interests",
+          "efforts": {
+            "API": 8,
+            "CMS": 4,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Prayer preferences",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Profile with visibilitay controls",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Questionnaire",
+          "efforts": {
+            "API": 16,
+            "CMS": 8,
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Personalised Content Feed -  Bride/Groom",
+      "description": "Personalized inspiration feed for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "curated content feed",
+          "efforts": {
+            "API": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Display Feed",
+          "efforts": {
+            "API": 14,
+            "Flutter": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Image Caching & Optimization",
+          "efforts": {
+            "Flutter": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Search/Filter  feed",
+          "efforts": {
+            "API": 8,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Community Interaction - Bride/Groom",
+      "description": "Community Q&A, comments, and engagement for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Add suggestion/comments",
+          "efforts": {
+            "API": 4,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Delete Questions",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Questions",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Like comments",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Post Questions",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Search & Filter Functionality - Bride/Groom",
+      "description": "Search and filter content for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Search and filter",
+          "efforts": {
+            "API": 24,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Search result",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Save Inspirations - Bride/Groom",
+      "description": "Save and manage favorite inspirations for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "List Saved photos",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Remove saved photos",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Save photos",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Share Inspirations - Bride/Groom",
+      "description": "Share inspiration content for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Generate shareable link",
+          "efforts": {
+            "API": 14,
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "send inspiration in chat",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Share inspiration",
+          "efforts": {
+            "API": 4,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Create & Export Wedding Day Timeline - Bride/Groom",
+      "description": "Create and export wedding day timeline for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Add saved photos or venues",
+          "efforts": {
+            "API": 12,
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "create a timeline",
+          "efforts": {
+            "API": 12,
+            "Flutter": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Delete timeline",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Edit timeline",
+          "efforts": {
+            "API": 8,
+            "Flutter": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Exported to PDF",
+          "efforts": {
+            "API": 16,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "API - Payment Integration",
+      "description": "Integrate payment gateways for the platform.",
+      "tasks": [
+        {
+          "description": "AfterPay integration",
+          "efforts": {
+            "API": 17
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Integrate payment gateways (Stripe)",
+          "efforts": {
+            "API": 17
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Paypal integration",
+      "description": "Integrate PayPal payment gateway.",
+      "tasks": [
+        {
+          "description": "Paypal integration",
+          "efforts": {
+            "API": 40,
+            "Flutter": 40
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Profile Creation - Photographer/Videographer",
+      "description": "Profile creation for photographers and videographers.",
+      "tasks": [
+        {
+          "description": "Bio and background information",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Gallery of photos",
+          "efforts": {
+            "API": 8,
+            "Flutter": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Rate card",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Portfolio Uploads - Photographer/Videographer",
+      "description": "Portfolio upload and management for photographers/videographers.",
+      "tasks": [
+        {
+          "description": "Photo permissions",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Remove Photo and videos",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "tag photos with location data",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Upload photos and videos",
+          "efforts": {
+            "API": 16,
+            "Flutter": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "View Portfolio photo and videos",
+          "efforts": {
+            "API": 14,
+            "Flutter": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Photo and Location Tagging - Venue",
+      "description": "Manage photo and location tags for venues.",
+      "tasks": [
+        {
+          "description": "Add tag specific locations within the venue",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Edit Tag",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "List photo based on tag",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Remove Tag",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Photo Engagement Analytics - Photographer/Videographer",
+      "description": "Analytics for photo engagement for photographers/videographers.",
+      "tasks": [
+        {
+          "description": "Track likes, comments, and shares on uploaded photos.",
+          "efforts": {
+            "API": 16,
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "View tracked data report",
+          "efforts": {
+            "API": 16,
+            "Flutter": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Lead Generation - Photographer/Videographer",
+      "description": "Lead generation and verification for photographers/videographers.",
+      "tasks": [
+        {
+          "description": "Mark as verified",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Request/Contact for enquiries",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Submit details for verification",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Verified professional list",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Profile Updates - Photographer/Videographer",
+      "description": "Profile and portfolio updates for photographers/videographers.",
+      "tasks": [
+        {
+          "description": "Edit Portfolios",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Report to reviews",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Responds to reviews",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "View portfolios",
+          "efforts": {
+            "API": 12,
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "View Reviews",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Profile Creation - Venue",
+      "description": "Venue profile creation and management.",
+      "tasks": [
+        {
+          "description": "Contact details",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Gallery of available photo spots",
+          "efforts": {
+            "API": 8,
+            "Flutter": 14
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Pricing details",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Venue name, description, and services",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Promotions & Special Offers - Venue",
+      "description": "Venue promotions, advertisements, and special offers.",
+      "tasks": [
+        {
+          "description": "Add venue adverstiments",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Create promotions post",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Delete promotion post",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Edit promotion post",
+          "efforts": {
+            "API": 4,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "List promotion posts",
+          "efforts": {
+            "API": 6,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Analytics Dashboard - Venue",
+      "description": "Analytics dashboard and reporting for venues.",
+      "tasks": [
+        {
+          "description": "Export report data",
+          "efforts": {
+            "API": 16,
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Filter analytics dashboard",
+          "efforts": {
+            "API": 8,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Track user interaction to venue profile",
+          "efforts": {
+            "API": 16,
+            "Flutter": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "View analytics dashboard",
+          "efforts": {
+            "API": 24,
+            "Flutter": 32
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Dashboard and Settings (Admin)",
+      "description": "Admin dashboard and settings management.",
+      "tasks": [
+        {
+          "description": "Dashboard",
+          "efforts": {
+            "CMS": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Email template management",
+          "efforts": {
+            "CMS": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Page management",
+          "efforts": {
+            "CMS": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Settings",
+          "efforts": {
+            "CMS": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Video detail and player",
+          "efforts": {
+            "CMS": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Content Governance (Admin)",
+      "description": "Admin content moderation and governance.",
+      "tasks": [
+        {
+          "description": "Approve content",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Maintain word list",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Remove content",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "System analytics and reporting - Admin",
+      "description": "System analytics and reporting for admin users.",
+      "tasks": [
+        {
+          "description": "Analytics dashboard",
+          "efforts": {
+            "API": 24,
+            "CMS": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Standard reports",
+          "efforts": {
+            "API": 24,
+            "CMS": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "System analytics and reporting",
+          "efforts": {
+            "API": 24,
+            "CMS": 32
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Email Notification",
+      "description": "Email notification management and delivery.",
+      "tasks": [
+        {
+          "description": "Manage email template",
+          "efforts": {
+            "API": 16,
+            "CMS": 40
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Sending email notifications",
+          "efforts": {
+            "API": 20
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Set up email notifications",
+          "efforts": {
+            "API": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Map & Locations",
+      "description": "Map integration and location-based features.",
+      "tasks": [
+        {
+          "description": "Custom Map Markers & Clustering",
+          "efforts": {
+            "Flutter": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Directions & External Map Linking",
+          "efforts": {
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Google Maps SDK Integration",
+          "efforts": {
+            "API": 2,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Search by Map Area (Geospatial Query)",
+          "efforts": {
+            "API": 12,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Venue Details BottomSheet UI",
+          "efforts": {
+            "API": 4,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Push Notifications:",
+      "description": "Push notification scheduling and sending.",
+      "tasks": [
+        {
+          "description": "Schedule notifications",
+          "efforts": {
+            "API": 16,
+            "CMS": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Send notifications",
+          "efforts": {
+            "API": 16,
+            "CMS": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Onboarding",
+      "description": "Onboarding screens and flow for new users.",
+      "tasks": [
+        {
+          "description": "Landing screen",
+          "efforts": {
+            "Flutter": 6
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Main menu for easy navigation within the app",
+          "efforts": {
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Onboarding",
+          "efforts": {
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Splash Screen",
+          "efforts": {
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Help and Support",
+      "description": "Help and support features for users and admin.",
+      "tasks": [
+        {
+          "description": "Admin can manage FAQs (add, edit, delete)",
+          "efforts": {
+            "CMS": 24
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Admin can view, reply to, and manage all support tickets from a central dashboard",
+          "efforts": {
+            "CMS": 22
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Allow users to submit support queries and feedback",
+          "efforts": {
+            "API": 16,
+            "Flutter": 16
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Enable users to view and manage their support tickets",
+          "efforts": {
+            "API": 12,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "Integrate a helpdesk system with ticket tracking",
+          "efforts": {
+            "API": 34,
+            "Flutter": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "User feedback",
+      "description": "Collect user feedback.",
+      "tasks": [
+        {
+          "description": "Add user feedback",
+          "efforts": {
+            "API": 2,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Favourite/Bookmark",
+      "description": "Bookmark and favorite management.",
+      "tasks": [
+        {
+          "description": "Remove items from favourites",
+          "efforts": {
+            "API": 4,
+            "Flutter": 4
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "See details of each favourite",
+          "efforts": {
+            "API": 6,
+            "Flutter": 8
+          },
+          "source": "retrieved",
+          "is_custom": false
+        },
+        {
+          "description": "View list of all favourited items",
+          "efforts": {
+            "API": 10,
+            "Flutter": 12
+          },
+          "source": "retrieved",
+          "is_custom": false
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "retrieved",
+      "user_types": null
+    },
+    {
+      "name": "Subscription Management",
+      "description": "Manage user subscriptions, plan selection, and renewals.",
+      "tasks": [
+        {
+          "description": "Implement subscription plan selection and purchase flow",
+          "efforts": {
+            "Flutter": 12,
+            "API": 20,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Handle subscription renewals and cancellations",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display current subscription status and history",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Payment Management - Stripe",
+      "description": "Stripe payment gateway management for all users.",
+      "tasks": [
+        {
+          "description": "Integrate Stripe payment processing for subscriptions and purchases",
+          "efforts": {
+            "Flutter": 12,
+            "API": 24,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Handle Stripe webhooks and payment status updates",
+          "efforts": {
+            "API": 20,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display Stripe payment receipts and transaction history",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Payment Management - PayPal",
+      "description": "PayPal payment gateway management for all users.",
+      "tasks": [
+        {
+          "description": "Integrate PayPal payment processing for subscriptions and purchases",
+          "efforts": {
+            "Flutter": 12,
+            "API": 24,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Handle PayPal IPN/webhooks and payment status updates",
+          "efforts": {
+            "API": 20,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display PayPal payment receipts and transaction history",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Activity History - Bride/Groom",
+      "description": "Track and display activity history for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Log user actions (save, share, comment, etc.)",
+          "efforts": {
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display activity history timeline",
+          "efforts": {
+            "Flutter": 10,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Allow users to filter and search their activity history",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Data Export to PDF - Bride/Groom",
+      "description": "Allow Bride/Groom users to export inspiration boards and timelines to PDF.",
+      "tasks": [
+        {
+          "description": "Implement PDF generation for wedding timelines and boards",
+          "efforts": {
+            "Flutter": 10,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Allow users to preview and download generated PDFs",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Send exported PDFs via email",
+          "efforts": {
+            "API": 8,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Social Media Integration - Instagram",
+      "description": "Integrate Instagram for content sharing and inspiration import.",
+      "tasks": [
+        {
+          "description": "Connect and authenticate Instagram accounts",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable sharing inspirations to Instagram",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Import photos from Instagram for inspiration boards",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Social Media Integration - Pinterest",
+      "description": "Integrate Pinterest for content sharing and inspiration import.",
+      "tasks": [
+        {
+          "description": "Connect and authenticate Pinterest accounts",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable sharing inspirations to Pinterest",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Import pins from Pinterest for inspiration boards",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Social Media Integration - Facebook",
+      "description": "Integrate Facebook for content sharing and inspiration import.",
+      "tasks": [
+        {
+          "description": "Connect and authenticate Facebook accounts",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16,
+            "CMS": 6
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable sharing inspirations to Facebook",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Import photos from Facebook for inspiration boards",
+          "efforts": {
+            "Flutter": 8,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Map Integration - Apple Maps",
+      "description": "Integrate Apple Maps for venue and photo location features.",
+      "tasks": [
+        {
+          "description": "Integrate Apple Maps SDK and display venues on map",
+          "efforts": {
+            "Flutter": 10,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable directions and external map linking",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Support geolocation tagging for photos and venues",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "File & Media Handling",
+      "description": "Robust file and media management for all users.",
+      "tasks": [
+        {
+          "description": "Implement image and video upload with validation",
+          "efforts": {
+            "Flutter": 10,
+            "API": 16
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Support file preview and download",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Optimize media storage and retrieval",
+          "efforts": {
+            "API": 12,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Feedback, Reviews & Ratings - Bride/Groom/Photographer/Venue",
+      "description": "Feedback and review system for all user types.",
+      "tasks": [
+        {
+          "description": "Allow users to submit reviews and ratings",
+          "efforts": {
+            "Flutter": 8,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display feedback, reviews, and ratings on profiles",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable reporting and moderation of reviews",
+          "efforts": {
+            "API": 8,
+            "CMS": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Bookmarking & Favorites - Bride/Groom",
+      "description": "Advanced bookmarking and favorites for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Enable users to bookmark inspirations, venues, and vendors",
+          "efforts": {
+            "Flutter": 8,
+            "API": 10
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display and manage favorites list",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Sync favorites across devices",
+          "efforts": {
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "User Questionnaire Onboarding - Bride/Groom",
+      "description": "Personalized onboarding questionnaire for Bride/Groom users.",
+      "tasks": [
+        {
+          "description": "Design and implement onboarding questionnaire screens",
+          "efforts": {
+            "Flutter": 10,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Store and process user responses for personalization",
+          "efforts": {
+            "API": 10
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display personalized recommendations based on responses",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Profile Management - Admin",
+      "description": "Admin management of user profiles and permissions.",
+      "tasks": [
+        {
+          "description": "View and search all user profiles",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Edit, suspend, or delete user accounts",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Assign and manage user roles and permissions",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Subscription & Payment Management - Admin",
+      "description": "Admin tools for managing subscriptions and payments.",
+      "tasks": [
+        {
+          "description": "View and manage all user subscriptions",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Process refunds and resolve payment issues",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Generate payment and subscription reports",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "User Content Moderation - Admin",
+      "description": "Admin moderation of user-generated content.",
+      "tasks": [
+        {
+          "description": "Review and approve/reject user posts and comments",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Manage flagged or reported content",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Automate moderation with keyword filters",
+          "efforts": {
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Email Notification Management - Admin",
+      "description": "Admin configuration of email notifications and templates.",
+      "tasks": [
+        {
+          "description": "Create and edit email templates for notifications",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Configure notification triggers and recipients",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Monitor email delivery and bounce reports",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Reporting & Analytics - Admin",
+      "description": "Advanced reporting and analytics for admin users.",
+      "tasks": [
+        {
+          "description": "Generate custom reports on platform usage",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Visualize key metrics and trends in dashboard",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Export analytics data to CSV/PDF",
+          "efforts": {
+            "CMS": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Venue Analytics Dashboard - Venue",
+      "description": "Venue-specific analytics and performance dashboard.",
+      "tasks": [
+        {
+          "description": "Display venue engagement and booking statistics",
+          "efforts": {
+            "Flutter": 10,
+            "API": 12
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Enable filtering and comparison of analytics data",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Export venue analytics to PDF/CSV",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    },
+    {
+      "name": "Venue Promotions & Special Offers - Venue",
+      "description": "Advanced management of venue promotions and offers.",
+      "tasks": [
+        {
+          "description": "Create and schedule special offers",
+          "efforts": {
+            "Flutter": 8,
+            "API": 10
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Display and manage ongoing promotions",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        },
+        {
+          "description": "Analyze promotion performance",
+          "efforts": {
+            "Flutter": 8,
+            "API": 8
+          },
+          "source": "AI Generated",
+          "is_custom": true
+        }
+      ],
+      "is_mandatory": false,
+      "source_template": "AI Generated",
+      "user_types": null
+    }
+  ],
+  "generated_at": "2026-01-19T10:13:21.348808",
+  "analyzed_requirement": {
+    "project_name": "wedv2",
+    "domain": "wedding_inspiration_platform",
+    "features": [
+      "user_account_creation",
+      "user_questionnaire_onboarding",
+      "personalized_content_feed",
+      "community_interaction",
+      "search_and_filter_content",
+      "save_inspirations",
+      "share_inspirations",
+      "create_export_wedding_day_timeline",
+      "subscription_model",
+      "payment_gateway_integration_stripe",
+      "payment_gateway_integration_paypal",
+      "photographer_profile_creation",
+      "photographer_portfolio_uploads",
+      "photo_location_tagging_photographer",
+      "photo_engagement_analytics_photographer",
+      "lead_generation_photographer",
+      "profile_updates_photographer",
+      "venue_profile_creation",
+      "venue_photo_location_tagging",
+      "venue_promotions_special_offers",
+      "venue_analytics_dashboard",
+      "admin_centralized_dashboard",
+      "admin_user_content_moderation",
+      "admin_subscription_payment_management",
+      "admin_reporting_analytics",
+      "admin_email_notification_management",
+      "map_integration_apple_maps",
+      "social_media_integration_instagram",
+      "social_media_integration_pinterest",
+      "social_media_integration_facebook",
+      "push_notifications",
+      "file_media_handling",
+      "onboarding_flow",
+      "help_support",
+      "feedback_reviews_ratings",
+      "bookmarking_favorites",
+      "activity_history",
+      "data_export_pdf"
+    ],
+    "tech_stack": [
+      "Flutter",
+      "API",
+      "CMS",
+      "Stripe",
+      "PayPal",
+      "Apple Maps"
+    ],
+    "platforms": [
+      "Flutter",
+      "API",
+      "CMS"
+    ],
+    "initial_epics": [
+      "User Account Creation - Bride/Groom",
+      "User Questionnaire Onboarding - Bride/Groom",
+      "Personalized Content Feed - Bride/Groom",
+      "Community Interaction - Bride/Groom",
+      "Search and Filter Content - Bride/Groom",
+      "Save Inspirations - Bride/Groom",
+      "Share Inspirations - Bride/Groom",
+      "Create and Export Wedding Day Timeline - Bride/Groom",
+      "Subscription Model - Bride/Groom",
+      "Payment Gateway Integration (Stripe) - Bride/Groom",
+      "Payment Gateway Integration (PayPal) - Bride/Groom",
+      "Photographer Profile Creation - Photographer/Videographer",
+      "Photographer Portfolio Uploads - Photographer/Videographer",
+      "Photo Location Tagging - Photographer/Videographer",
+      "Photo Engagement Analytics - Photographer/Videographer",
+      "Lead Generation - Photographer/Videographer",
+      "Profile Updates - Photographer/Videographer",
+      "Venue Profile Creation - Venue",
+      "Venue Photo Location Tagging - Venue",
+      "Venue Promotions and Special Offers - Venue",
+      "Venue Analytics Dashboard - Venue",
+      "Admin Centralized Dashboard - Admin",
+      "Admin User and Content Moderation - Admin",
+      "Admin Subscription and Payment Management - Admin",
+      "Admin Reporting and Analytics - Admin",
+      "Admin Email and Notification Management - Admin",
+      "Map Integration (Apple Maps)",
+      "Social Media Integration (Instagram)",
+      "Social Media Integration (Pinterest)",
+      "Social Media Integration (Facebook)",
+      "Push Notifications",
+      "File and Media Handling",
+      "Onboarding Flow",
+      "Help and Support",
+      "Feedback, Reviews, and Ratings",
+      "Bookmarking and Favorites",
+      "Activity History",
+      "Data Export (PDF)"
+    ],
+    "epic_categories": {
+      "User Account Creation - Bride/Groom": [
+        "user_account_creation"
+      ],
+      "User Questionnaire Onboarding - Bride/Groom": [
+        "user_questionnaire_onboarding"
+      ],
+      "Personalized Content Feed - Bride/Groom": [
+        "personalized_content_feed"
+      ],
+      "Community Interaction - Bride/Groom": [
+        "community_interaction"
+      ],
+      "Search and Filter Content - Bride/Groom": [
+        "search_and_filter_content"
+      ],
+      "Save Inspirations - Bride/Groom": [
+        "save_inspirations"
+      ],
+      "Share Inspirations - Bride/Groom": [
+        "share_inspirations"
+      ],
+      "Create and Export Wedding Day Timeline - Bride/Groom": [
+        "create_export_wedding_day_timeline"
+      ],
+      "Subscription Model - Bride/Groom": [
+        "subscription_model"
+      ],
+      "Payment Gateway Integration (Stripe) - Bride/Groom": [
+        "payment_gateway_integration_stripe"
+      ],
+      "Payment Gateway Integration (PayPal) - Bride/Groom": [
+        "payment_gateway_integration_paypal"
+      ],
+      "Photographer Profile Creation - Photographer/Videographer": [
+        "photographer_profile_creation"
+      ],
+      "Photographer Portfolio Uploads - Photographer/Videographer": [
+        "photographer_portfolio_uploads"
+      ],
+      "Photo Location Tagging - Photographer/Videographer": [
+        "photo_location_tagging_photographer"
+      ],
+      "Photo Engagement Analytics - Photographer/Videographer": [
+        "photo_engagement_analytics_photographer"
+      ],
+      "Lead Generation - Photographer/Videographer": [
+        "lead_generation_photographer"
+      ],
+      "Profile Updates - Photographer/Videographer": [
+        "profile_updates_photographer"
+      ],
+      "Venue Profile Creation - Venue": [
+        "venue_profile_creation"
+      ],
+      "Venue Photo Location Tagging - Venue": [
+        "venue_photo_location_tagging"
+      ],
+      "Venue Promotions and Special Offers - Venue": [
+        "venue_promotions_special_offers"
+      ],
+      "Venue Analytics Dashboard - Venue": [
+        "venue_analytics_dashboard"
+      ],
+      "Admin Centralized Dashboard - Admin": [
+        "admin_centralized_dashboard"
+      ],
+      "Admin User and Content Moderation - Admin": [
+        "admin_user_content_moderation"
+      ],
+      "Admin Subscription and Payment Management - Admin": [
+        "admin_subscription_payment_management"
+      ],
+      "Admin Reporting and Analytics - Admin": [
+        "admin_reporting_analytics"
+      ],
+      "Admin Email and Notification Management - Admin": [
+        "admin_email_notification_management"
+      ],
+      "Map Integration (Apple Maps)": [
+        "map_integration_apple_maps"
+      ],
+      "Social Media Integration (Instagram)": [
+        "social_media_integration_instagram"
+      ],
+      "Social Media Integration (Pinterest)": [
+        "social_media_integration_pinterest"
+      ],
+      "Social Media Integration (Facebook)": [
+        "social_media_integration_facebook"
+      ],
+      "Push Notifications": [
+        "push_notifications"
+      ],
+      "File and Media Handling": [
+        "file_media_handling"
+      ],
+      "Onboarding Flow": [
+        "onboarding_flow"
+      ],
+      "Help and Support": [
+        "help_support"
+      ],
+      "Feedback, Reviews, and Ratings": [
+        "feedback_reviews_ratings"
+      ],
+      "Bookmarking and Favorites": [
+        "bookmarking_favorites"
+      ],
+      "Activity History": [
+        "activity_history"
+      ],
+      "Data Export (PDF)": [
+        "data_export_pdf"
+      ]
+    },
+    "user_types": [
+      "Bride/Groom",
+      "Photographer/Videographer",
+      "Venue",
+      "Admin"
+    ],
+    "special_requirements": [
+      "Geospatial features (map-based location tagging and search via Apple Maps)",
+      "Third-party payment gateway integration (Stripe, PayPal)",
+      "Social media sharing and integration (Instagram, Pinterest, Facebook)",
+      "File/media upload and handling (photos, videos)",
+      "Push notifications",
+      "PDF export of timelines"
+    ]
+  },
+  "total_hours": 3896
+}

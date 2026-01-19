@@ -32,6 +32,7 @@ from comparison_utils import (
     compare_user_roles,
     compare_epics,
     compare_tasks,
+    compare_epics_by_user_type,
     generate_status_emoji
 )
 
@@ -78,6 +79,7 @@ def generate_markdown_report(
     user_role_comparison: Dict[str, Any],
     epic_comparison: Dict[str, Any],
     task_comparison: Dict[str, Any],
+    user_type_epic_comparison: Dict[str, Any],
     threshold: float
 ) -> str:
     """
@@ -91,6 +93,7 @@ def generate_markdown_report(
         user_role_comparison: User role comparison results
         epic_comparison: Epic comparison results
         task_comparison: Task comparison results
+        user_type_epic_comparison: User-type-specific epic coverage results
         threshold: Fuzzy matching threshold used
         
     Returns:
@@ -151,39 +154,8 @@ def generate_markdown_report(
             report_lines.append(f"- {platform}")
         report_lines.append("")
     
-    # 3. User Role Coverage
-    report_lines.append("## 3. User Role Coverage")
-    report_lines.append("")
-    role_emoji = generate_status_emoji(user_role_comparison['coverage_percentage'])
-    report_lines.append(f"**Status:** {role_emoji} {user_role_comparison['coverage_percentage']:.2f}% Coverage")
-    report_lines.append("")
-    report_lines.append("| Metric | Count |")
-    report_lines.append("|--------|-------|")
-    report_lines.append(f"| Actual User Roles | {user_role_comparison['total_actual']} |")
-    report_lines.append(f"| Predicted User Roles | {user_role_comparison['total_predicted']} |")
-    report_lines.append(f"| Matched | {user_role_comparison['matched_count']} |")
-    report_lines.append("")
-    
-    if user_role_comparison['matched']:
-        report_lines.append("**✅ Matched User Roles:**")
-        for role in user_role_comparison['matched']:
-            report_lines.append(f"- {role}")
-        report_lines.append("")
-    
-    if user_role_comparison['missing']:
-        report_lines.append("**❌ Missing User Roles (in Actual but not Predicted):**")
-        for role in user_role_comparison['missing']:
-            report_lines.append(f"- {role}")
-        report_lines.append("")
-    
-    if user_role_comparison['extra']:
-        report_lines.append("**➕ Extra User Roles (in Predicted but not Actual):**")
-        for role in user_role_comparison['extra']:
-            report_lines.append(f"- {role}")
-        report_lines.append("")
-    
-    # 4. Epic Coverage
-    report_lines.append("## 4. Epic Coverage")
+    # 3. Epic Coverage
+    report_lines.append("## 3. Epic Coverage")
     report_lines.append("")
     epic_emoji = generate_status_emoji(epic_comparison['coverage_percentage'])
     report_lines.append(f"**Status:** {epic_emoji} {epic_comparison['coverage_percentage']:.2f}% Coverage")
@@ -222,8 +194,58 @@ def generate_markdown_report(
             report_lines.append(f"- {epic['name']}")
         report_lines.append("")
     
-    # 5. Task Coverage
-    report_lines.append("## 5. Task Coverage & Granularity")
+    # 3.1 Epic Coverage by User Type
+    report_lines.append("### 3.1 Epic Coverage by User Type")
+    report_lines.append("")
+    ut_overall_emoji = generate_status_emoji(user_type_epic_comparison['overall_coverage'])
+    report_lines.append(f"**Overall User-Type Coverage:** {ut_overall_emoji} {user_type_epic_comparison['overall_coverage']:.2f}%")
+    report_lines.append(f"**Total User Types Found:** {user_type_epic_comparison['total_user_types']}")
+    report_lines.append("")
+    report_lines.append("| User Type | Actual Epics | Predicted Epics | Matched | Coverage |")
+    report_lines.append("|-----------|--------------|-----------------|---------|----------|")
+    
+    for user_type in user_type_epic_comparison['user_types']:
+        stats = user_type_epic_comparison['by_user_type'][user_type]
+        ut_emoji = generate_status_emoji(stats['coverage_percentage'])
+        report_lines.append(
+            f"| {user_type} | "
+            f"{stats['total_actual']} | "
+            f"{stats['total_predicted']} | "
+            f"{stats['matched']} | "
+            f"{ut_emoji} {stats['coverage_percentage']:.2f}% |"
+        )
+    report_lines.append("")
+    
+    # Show detailed breakdown for each user type
+    for user_type in user_type_epic_comparison['user_types']:
+        stats = user_type_epic_comparison['by_user_type'][user_type]
+        
+        # Show details if there are missing, extra, OR matched epics
+        if stats['missing_epics'] or stats['extra_epics'] or stats['matched_epics']:
+            report_lines.append(f"#### {user_type} - Details")
+            report_lines.append("")
+            
+            # Show matched epics for perfect coverage
+            if stats['matched_epics'] and not stats['missing_epics'] and not stats['extra_epics']:
+                report_lines.append(f"**✅ Perfect Coverage - All {len(stats['matched_epics'])} Epics Matched:**")
+                for match in stats['matched_epics']:
+                    report_lines.append(f"- {match['actual']} → {match['predicted']} ({match['similarity']:.1f}% similarity)")
+                report_lines.append("")
+            
+            if stats['missing_epics']:
+                report_lines.append(f"**❌ Missing Epics ({len(stats['missing_epics'])}):**")
+                for epic in stats['missing_epics']:
+                    report_lines.append(f"- {epic}")
+                report_lines.append("")
+            
+            if stats['extra_epics']:
+                report_lines.append(f"**➕ Extra Epics ({len(stats['extra_epics'])}):**")
+                for epic in stats['extra_epics']:
+                    report_lines.append(f"- {epic}")
+                report_lines.append("")
+    
+    # 4. Task Coverage
+    report_lines.append("## 4. Task Coverage & Granularity")
     report_lines.append("")
     task_emoji = generate_status_emoji(task_comparison['overall_task_coverage'])
     report_lines.append(f"**Status:** {task_emoji} {task_comparison['overall_task_coverage']:.2f}% Overall Coverage")
@@ -260,7 +282,6 @@ def generate_markdown_report(
     # Calculate overall score
     scores = [
         platform_comparison['coverage_percentage'],
-        user_role_comparison['coverage_percentage'],
         epic_comparison['coverage_percentage'],
         task_comparison['overall_task_coverage']
     ]
@@ -272,7 +293,6 @@ def generate_markdown_report(
     report_lines.append("| Dimension | Coverage |")
     report_lines.append("|-----------|----------|")
     report_lines.append(f"| Platform Coverage | {platform_comparison['coverage_percentage']:.2f}% |")
-    report_lines.append(f"| User Role Coverage | {user_role_comparison['coverage_percentage']:.2f}% |")
     report_lines.append(f"| Epic Coverage | {epic_comparison['coverage_percentage']:.2f}% |")
     report_lines.append(f"| Task Coverage | {task_comparison['overall_task_coverage']:.2f}% |")
     report_lines.append("")
@@ -294,7 +314,6 @@ def generate_markdown_report(
     # Best and worst coverage
     coverage_items = [
         ("Platforms", platform_comparison['coverage_percentage']),
-        ("User Roles", user_role_comparison['coverage_percentage']),
         ("Epics", epic_comparison['coverage_percentage']),
         ("Tasks", task_comparison['overall_task_coverage'])
     ]
@@ -442,7 +461,7 @@ Examples:
     parser.add_argument(
         '--threshold',
         type=float,
-        default=0.5,
+        default=0.6,
         help='Fuzzy matching threshold for epic names (0.0-1.0, default: 0.75)'
     )
     
@@ -495,6 +514,11 @@ Examples:
         print("  📋 Comparing epic coverage...")
         epic_comparison = compare_epics(actual_epics, predicted_epics, args.threshold)
         
+        print("  👥 Comparing epic coverage by user type...")
+        # Convert actual_epics to proper format for user type comparison
+        actual_epics_dict = {epic['name']: epic for epic in actual_epics}
+        user_type_epic_comparison = compare_epics_by_user_type(actual_epics_dict, predicted_epics, args.threshold * 100)
+        
         print("  ✅ Comparing task coverage...")
         task_comparison = compare_tasks(actual_epics, predicted_epics, epic_comparison['matched'])
         
@@ -508,6 +532,7 @@ Examples:
             user_role_comparison,
             epic_comparison,
             task_comparison,
+            user_type_epic_comparison,
             args.threshold
         )
         
@@ -520,7 +545,7 @@ Examples:
         
         print("")
         print("✅ Comparison complete!")
-        print(f"📊 Overall Coverage Score: {((platform_comparison['coverage_percentage'] + user_role_comparison['coverage_percentage'] + epic_comparison['coverage_percentage'] + task_comparison['overall_task_coverage']) / 4):.2f}%")
+        print(f"📊 Overall Coverage Score: {((platform_comparison['coverage_percentage'] + epic_comparison['coverage_percentage'] + task_comparison['overall_task_coverage']) / 3):.2f}%")
         
     except FileNotFoundError as e:
         print(f"❌ Error: {e}")

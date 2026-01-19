@@ -42,7 +42,6 @@ class AnalyzedRequirement(BaseModel):
     platforms: List[Platform] = Field(..., description="Target platforms")
     initial_epics: List[str] = Field(..., description="Initial epics identified")
     epic_categories: Optional[Dict[str, List[str]]] = Field(default=None, description="Epic categories mapped to their related features for targeted retrieval")
-    complexity: str = Field(..., description="Complexity level (simple/medium/complex)")
     user_types: Optional[List[str]] = Field(default=None, description="User roles/types in the system (e.g., Buyer, Seller)")
     special_requirements: Optional[List[str]] = Field(default=None)
     

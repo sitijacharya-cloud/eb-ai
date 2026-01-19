@@ -57,9 +57,9 @@ def retrieve_similar_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
             logger.info(f"Retrieving epics separately for {len(epic_categories)} categories...")
             
             for epic_name, related_features in epic_categories.items():
-                # Skip retrieval if this category name matches a mandatory epic
+                # Skip retrieval if this category name EXACTLY matches a mandatory epic
                 # (Mandatory epics are already included from config)
-                if epic_name in mandatory_epic_names or any(is_similar_epic_name(epic_name, m) for m in mandatory_epic_names):
+                if epic_name in mandatory_epic_names:
                     logger.info(f"  ⊗ Skipped category '{epic_name}': Already in mandatory epics")
                     continue
                 
@@ -70,8 +70,8 @@ def retrieve_similar_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
                 # Retrieve epics for this specific category
                 category_epics = kb.retrieve_similar_epics(
                     query_text=query_text,
-                    n_results=5,  # Get top 3 for each category
-                    similarity_threshold=0.4 #0-disimilar , 1-similar 
+                    n_results=1,  # Get top 3 for each category
+                    similarity_threshold=0.7 #0-disimilar , 1-similar 
                 )
                 
                 # Filter out duplicates
@@ -81,18 +81,15 @@ def retrieve_similar_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
                         logger.info(f"    - Skipped: {epic.name} (mandatory)")
                         continue
                     
-                    # Check for semantic similarity with any already-added epic
-                    is_duplicate = False
-                    for existing_name in added_epic_names:
-                        if is_similar_epic_name(epic.name, existing_name):
-                            logger.info(f"    - Skipped: {epic.name} (similar to {existing_name})")
-                            is_duplicate = True
-                            break
+                    # Check for EXACT duplicate (not semantic similarity)
+                    if epic.name in added_epic_names:
+                        logger.info(f"    - Skipped: {epic.name} (already added)")
+                        continue
                     
-                    if not is_duplicate:
-                        retrieved_epics.append(epic)
-                        added_epic_names.append(epic.name)
-                        logger.info(f"    + Added: {epic.name} (from {epic.source_template}, {len(epic.tasks)} tasks)")
+                    # Add the epic
+                    retrieved_epics.append(epic)
+                    added_epic_names.append(epic.name)
+                    logger.info(f"    + Added: {epic.name} (from {epic.source_template}, {len(epic.tasks)} tasks)")
         
         else:
             # Fallback: Use combined query if no epic_categories available
@@ -117,17 +114,15 @@ def retrieve_similar_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
                     logger.info(f"  - Skipped: {epic.name} (mandatory)")
                     continue
                 
-                is_duplicate = False
-                for existing_name in added_epic_names:
-                    if is_similar_epic_name(epic.name, existing_name):
-                        logger.info(f"  - Skipped: {epic.name} (similar to {existing_name})")
-                        is_duplicate = True
-                        break
+                # Check for EXACT duplicate (not semantic similarity)
+                if epic.name in added_epic_names:
+                    logger.info(f"  - Skipped: {epic.name} (already added)")
+                    continue
                 
-                if not is_duplicate:
-                    retrieved_epics.append(epic)
-                    added_epic_names.append(epic.name)
-                    logger.info(f"  + Added: {epic.name} (from {epic.source_template})")
+                # Add the epic
+                retrieved_epics.append(epic)
+                added_epic_names.append(epic.name)
+                logger.info(f"  + Added: {epic.name} (from {epic.source_template})")
         
         logger.info(f"✓ Retrieved {len(retrieved_epics)} total epics:")
         logger.info(f"  - {len(mandatory_epic_names)} mandatory")

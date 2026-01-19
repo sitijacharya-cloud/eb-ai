@@ -8,6 +8,34 @@ focusing on coverage analysis (platforms, user roles, epics, tasks).
 from typing import Dict, List, Tuple, Set, Any
 from difflib import SequenceMatcher
 from collections import defaultdict
+import re
+
+
+def extract_user_type_from_epic_name(epic_name: str) -> str:
+    """
+    Extract user type from epic name.
+    
+    Epic names follow pattern: "Feature Name - UserType"
+    Examples:
+        "Portfolio Uploads - Photographer/Videographer" -> "Photographer/Videographer"
+        "Personalised Content Feed -  Bride/Groom" -> "Bride/Groom"
+        "Authentication" -> "Generic" (no user type)
+    
+    Args:
+        epic_name: Epic name string
+        
+    Returns:
+        User type string or "Generic" if no user type specified
+    """
+    # Match pattern: " - UserType" at end of string
+    # Handle single or double spaces before dash
+    match = re.search(r'\s+-\s+([A-Za-z/&\s]+)$', epic_name)
+    if match:
+        user_type = match.group(1).strip()
+        # Normalize variations
+        user_type = user_type.replace('&', '/').strip()
+        return user_type
+    return "Generic"
 
 
 def fuzzy_match_string(str1: str, str2: str) -> float:
@@ -203,7 +231,7 @@ def calculate_total_hours(estimation_data: Dict[str, Any]) -> int:
 def fuzzy_match_epics(
     actual_epics: List[Dict[str, Any]], 
     predicted_epics: List[Dict[str, Any]], 
-    threshold: float = 0.75
+    threshold: float = 0.6
 ) -> Tuple[List[Tuple], List[Dict], List[Dict]]:
     """
     Match epics between actual and predicted using fuzzy string matching.
@@ -378,7 +406,7 @@ def compare_user_roles(actual_roles: Set[str], predicted_roles: Set[str]) -> Dic
 def compare_epics(
     actual_epics: List[Dict[str, Any]], 
     predicted_epics: List[Dict[str, Any]],
-    threshold: float = 0.75
+    threshold: float = 0.6
 ) -> Dict[str, Any]:
     """
     Compare epic coverage between actual and predicted.
@@ -491,7 +519,107 @@ def compare_tasks(
     }
 
 
-def generate_status_emoji(coverage_percentage: float, good_threshold: float = 80, ok_threshold: float = 50) -> str:
+def compare_epics_by_user_type(actual_epics: Dict[str, Any], predicted_epics: List[Dict[str, Any]], 
+                               similarity_threshold: float = 60) -> Dict[str, Any]:
+    """
+    Compare epic coverage grouped by user type extracted from epic names.
+    
+    Args:
+        actual_epics: Dictionary of actual epics {epic_name: epic_data}
+        predicted_epics: List of predicted epics [{"name": "...", ...}]
+        similarity_threshold: Threshold for fuzzy matching (0-100)
+    
+    Returns:
+        Dictionary with per-user-type coverage statistics
+    """
+    from collections import defaultdict
+    
+    # Group actual epics by user type
+    actual_by_user_type = defaultdict(list)
+    for epic_name in actual_epics.keys():
+        user_type = extract_user_type_from_epic_name(epic_name)
+        actual_by_user_type[user_type].append(epic_name)
+    
+    # Group predicted epics by user type
+    predicted_by_user_type = defaultdict(list)
+    for epic in predicted_epics:
+        epic_name = epic.get('name', '')
+        user_type = extract_user_type_from_epic_name(epic_name)
+        predicted_by_user_type[user_type].append(epic_name)
+    
+    # Get all unique user types
+    all_user_types = sorted(set(list(actual_by_user_type.keys()) + list(predicted_by_user_type.keys())))
+    
+    # Calculate coverage for each user type
+    user_type_coverage = {}
+    for user_type in all_user_types:
+        actual_user_epics = actual_by_user_type.get(user_type, [])
+        predicted_user_epics = predicted_by_user_type.get(user_type, [])
+        
+        # Match epics within this user type using fuzzy matching
+        matched = []
+        missing = []
+        
+        for actual_epic in actual_user_epics:
+            found_match = False
+            for pred_epic in predicted_user_epics:
+                # Convert similarity_threshold from 0-100 scale to 0-1 scale
+                similarity_score = fuzzy_match_string(actual_epic, pred_epic)
+                if similarity_score * 100 >= similarity_threshold:
+                    matched.append({
+                        'actual': actual_epic,
+                        'predicted': pred_epic,
+                        'similarity': similarity_score * 100
+                    })
+                    found_match = True
+                    break
+            
+            if not found_match:
+                missing.append(actual_epic)
+        
+        # Find extra epics in predicted but not in actual
+        extra = []
+        for pred_epic in predicted_user_epics:
+            found_match = False
+            for actual_epic in actual_user_epics:
+                similarity_score = fuzzy_match_string(actual_epic, pred_epic)
+                if similarity_score * 100 >= similarity_threshold:
+                    found_match = True
+                    break
+            
+            if not found_match:
+                extra.append(pred_epic)
+        
+        total_actual = len(actual_user_epics)
+        matched_count = len(matched)
+        coverage = (matched_count / total_actual * 100) if total_actual > 0 else 0
+        
+        user_type_coverage[user_type] = {
+            'total_actual': total_actual,
+            'total_predicted': len(predicted_user_epics),
+            'matched': matched_count,
+            'missing': len(missing),
+            'extra': len(extra),
+            'coverage_percentage': round(coverage, 2),
+            'matched_epics': matched,
+            'missing_epics': missing,
+            'extra_epics': extra
+        }
+    
+    # Calculate overall statistics
+    total_actual_all = sum(stats['total_actual'] for stats in user_type_coverage.values())
+    total_matched_all = sum(stats['matched'] for stats in user_type_coverage.values())
+    overall_coverage = (total_matched_all / total_actual_all * 100) if total_actual_all > 0 else 0
+    
+    return {
+        'by_user_type': user_type_coverage,
+        'overall_coverage': round(overall_coverage, 2),
+        'total_user_types': len(all_user_types),
+        'user_types': all_user_types
+    }
+
+
+def generate_status_emoji(coverage_percentage: float, good_threshold: float = 60, ok_threshold: float = 50) -> str:
     """
     Generate status emoji based on coverage percentage.
     

@@ -54,23 +54,7 @@ def validate_estimation_quality(all_epics: List[Epic], analyzed_req, features_co
             f"Consider generating 15-25 for comprehensive coverage."
         )
     
-    # 3. Check total hours based on complexity
-    complexity = analyzed_req.complexity
-    min_hours = {
-        "simple": 800,
-        "medium": 1500,
-        "complex": 3000
-    }
-    
-    expected_min_hours = min_hours.get(complexity, 1500)
-    
-    if total_hours < expected_min_hours:
-        warnings.append(
-            f" Low hour estimate: {total_hours}h for '{complexity}' project. "
-            f"Expected at least {expected_min_hours}h. May be underestimated."
-        )
-    
-    # 4. Check platform coverage
+    # 3. Check platform coverage
     platforms_in_epics = set()
     for epic in all_epics:
         for task in epic.tasks:
@@ -114,20 +98,26 @@ def generate_custom_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
         }
     
     try:
-        # Start with retrieved epics (which includes mandatory ones)
-        all_epics: List[Epic] = list(retrieved_epics)
-        existing_epic_names = [epic.name for epic in all_epics]
-        
-        logger.info(f"Starting with {len(all_epics)} epics from retrieval")
-        logger.info(f"  - Mandatory: {len([e for e in all_epics if e.is_mandatory])}")
-        logger.info(f"  - Retrieved: {len([e for e in all_epics if not e.is_mandatory])}")
-        
-        # Separate mandatory and retrieved for display
+        # Separate mandatory and retrieved epics for modification
         mandatory_epics = [e for e in retrieved_epics if e.is_mandatory]
         similar_epics = [e for e in retrieved_epics if not e.is_mandatory]
         
+        logger.info(f"Starting with {len(retrieved_epics)} epics from retrieval")
+        logger.info(f"  - Mandatory (unchanged): {len(mandatory_epics)}")
+        logger.info(f"  - Retrieved (will be modified): {len(similar_epics)}")
+        
+        # We'll build all_epics progressively: mandatory unchanged -> retrieved modified -> new custom
+        all_epics: List[Epic] = []
+        existing_epic_names = []
+        
+        # Add mandatory epics unchanged
+        for mandatory_epic in mandatory_epics:
+            all_epics.append(mandatory_epic)
+            existing_epic_names.append(mandatory_epic.name)
+            logger.info(f"  ✓ Kept mandatory unchanged: {mandatory_epic.name} ({len(mandatory_epic.tasks)} tasks)")
+        
         # Format epics for prompt
-        def format_epics_for_prompt(epics: List[Epic], limit: int = 8) -> str:
+        def format_epics_for_prompt(epics: List[Epic], limit: int = 20) -> str:
             lines = []
             for epic in epics[:limit]:
                 lines.append(f"\n**{epic.name}** ({len(epic.tasks)} tasks):")
@@ -140,7 +130,7 @@ def generate_custom_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
         
         # Build prompt
         mandatory_summary = format_epics_for_prompt(mandatory_epics, limit=8)
-        retrieved_summary = format_epics_for_prompt(similar_epics, limit=8)
+        retrieved_summary = format_epics_for_prompt(similar_epics, limit=30)  # Send ALL retrieved epics
         platforms_str = ", ".join([p.value for p in analyzed_req.platforms])
         features_str = ", ".join(analyzed_req.features)
         
@@ -150,16 +140,134 @@ def generate_custom_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
         except:
             user_types_str = ", ".join([str(u) for u in analyzed_req.user_types])
         
-        prompt = GENERATE_CUSTOM_EPIC_PROMPT.format(
+        # Build prompt for MODIFYING retrieved epics and GENERATING new ones
+        prompt = f"""You are an expert software estimator. Your task has TWO PARTS:
+
+# PART 1: MODIFY RETRIEVED EPICS (Similar Epics Only)
+
+The following epics were retrieved from knowledge base based on similarity. They need to be ADAPTED to match the current project requirements.
+
+## Project Requirements:
+- **Domain**: {analyzed_req.domain}
+- **Target Platforms**: {platforms_str}
+- **User Types**: {user_types_str}
+- **Key Features**: {features_str}
+
+## Mandatory Epics (For Reference - DO NOT MODIFY):
+{mandatory_summary}
+
+These mandatory epics are already included unchanged. Learn from their structure but don't modify them.
+
+## Retrieved Similar Epics (MODIFY THESE):
+{retrieved_summary}
+
+**YOUR TASK FOR PART 1:**
+1. Review each RETRIEVED epic (not mandatory) and its tasks
+2. **PRESERVE task descriptions exactly as they are** - DO NOT rewrite or rephrase them
+3. **DO NOT remove any existing tasks** - Keep all tasks from retrieved epic
+4. **ONLY ADD new tasks** if project requirements specifically need them
+5. **CRITICAL: Adapt platforms to match target platforms: {platforms_str}**
+   - If retrieved epic has "Web App" but target is ["Flutter", "API"] → Replace "Web App" with "Flutter"
+   - If retrieved epic has "Flutter" but target is ["Web App", "API", "CMS"] → Replace "Flutter" with "Web App"
+   - Remove any platforms not in target list
+6. Adjust effort hours based on project domain and requirements (if needed)
+7. **Keep epic names EXACTLY as they are** - DO NOT rename epics
+8. Keep epic descriptions as they are (minor adjustments only if needed)
+9. Preserve source_template field
+10. Set is_mandatory to false (these are retrieved, not mandatory)
+
+**CRITICAL RULES:**
+- ✓ Keep task descriptions verbatim: "View analytics dashboard" stays "View analytics dashboard"
+- ✗ Don't rewrite: "View analytics dashboard" → "Create a dashboard view for analytics metrics" (WRONG!)
+- ✓ Keep all existing tasks, don't remove any
+- ✓ Only ADD tasks if project explicitly needs features not covered by existing tasks
+- ✓ Keep epic names unchanged: "Analytics Dashboard - Venue" stays "Analytics Dashboard - Venue"
+
+**Platform Adaptation Rules:**
+- Examples may have different platforms than your target
+- Learn task patterns and hours, but OUTPUT only target platforms: {platforms_str}
+- If example shows "Flutter: 12h" and target has "Web App" → Use "Web App: 12h"
+- Never include platforms outside: {platforms_str}
+
+# PART 2: GENERATE NEW CUSTOM EPICS
+
+{GENERATE_CUSTOM_EPIC_PROMPT.format(
             domain=analyzed_req.domain,
-            project_type=analyzed_req.domain,  # Use domain as project type
+            project_type=analyzed_req.domain,
             platforms=platforms_str,
             user_types=user_types_str,
             features=features_str,
-            mandatory_epics_summary=mandatory_summary,
-            retrieved_epics_summary=retrieved_summary,
-            existing_epic_names=", ".join(existing_epic_names)
-        )
+            mandatory_epics_summary="(Already provided above - these will be modified)",
+            retrieved_epics_summary="(Already provided above - these will be modified)",
+            existing_epic_names="All retrieved epics will be modified, so you can focus on NEW epics for uncovered features"
+        )}
+
+---
+
+# OUTPUT FORMAT:
+
+Return JSON with TWO sections:
+
+```json
+{{
+  "modified_epics": [
+    {{
+      "name": "Original Retrieved Epic Name",  // KEEP EXACTLY AS IS
+      "description": "Updated description for project context",
+      "is_mandatory": false,
+      "source_template": "original source",
+      "tasks": [
+        {{
+          "description": "Original task description",  // KEEP EXACTLY AS IS - Don't rewrite!
+          "efforts": {{
+            "Platform1": 12,  // Adapt platform names only
+            "Platform2": 16
+          }}
+        }},
+        {{
+          "description": "Another original task",  // KEEP EXACTLY AS IS
+          "efforts": {{
+            "Platform1": 8,
+            "Platform2": 12
+          }}
+        }},
+        {{
+          "description": "New task if needed",  // ONLY if project requires additional feature
+          "efforts": {{
+            "Platform1": 10,
+            "Platform2": 14
+          }}
+        }}
+      ]
+    }}
+  ],
+  "custom_epics": [
+    {{
+      "name": "New Epic Name - UserType",
+      "description": "Brief description",
+      "tasks": [
+        {{
+          "description": "Task description",
+          "efforts": {{
+            "Platform1": 12,
+            "Platform2": 16
+          }}
+        }}
+      ]
+    }}
+  ]
+}}
+```
+
+**CRITICAL VALIDATION:**
+- ALL epics (modified and custom) must ONLY use platforms from: {platforms_str}
+- No platforms outside target list allowed
+- modified_epics should include ALL {len(similar_epics)} retrieved similar epics (adapted, NOT mandatory)
+- **CRITICAL: Task descriptions in modified_epics must be EXACTLY as in original** (no rewriting)
+- **CRITICAL: Epic names in modified_epics must be EXACTLY as in original** (no renaming)
+- **CRITICAL: All original tasks must be present** (don't remove tasks)
+- custom_epics should be 15-25 NEW epics for uncovered features
+"""
         
         # Generate custom epics with tasks and efforts
         openai_service = get_openai_service()
@@ -167,7 +275,14 @@ def generate_custom_epic_node(state: Dict[str, Any]) -> Dict[str, Any]:
         
         system_message = f"""You are an expert software estimator specializing in {analyzed_req.domain} applications.
 
-Generate custom epics with complete task breakdowns and effort estimates.
+Your task has TWO PARTS:
+1. MODIFY retrieved similar epics (NOT mandatory ones) to match project requirements
+   - **CRITICAL: Keep task descriptions EXACTLY as they are**
+   - **CRITICAL: Keep epic names EXACTLY as they are**
+   - **ONLY adapt platforms and hours**
+   - **ONLY ADD new tasks if project needs additional features**
+   - **DO NOT remove existing tasks**
+2. GENERATE new custom epics for uncovered features
 
  CRITICAL INSTRUCTION - PLATFORM ADAPTATION:
 
@@ -251,27 +366,70 @@ Return valid JSON only."""
         if isinstance(response, str):
             response = json.loads(response)
         
+        # Process MODIFIED epics (retrieved similar epics only, NOT mandatory)
+        modified_epics_data = response.get("modified_epics", [])
+        logger.info(f"Received {len(modified_epics_data)} modified retrieved epics (expected {len(similar_epics)})")
+        
+        for epic_data in modified_epics_data:
+            epic_name = epic_data.get("name", "")
+            
+            # Create Task objects from tasks data
+            tasks = []
+            for task_data in epic_data.get("tasks", []):
+                task_description = task_data.get("description", "")
+                efforts_data = task_data.get("efforts", {})
+                
+                # Convert platform strings to Platform enum
+                efforts = {}
+                for platform_name, hours in efforts_data.items():
+                    try:
+                        platform = Platform(platform_name)
+                        # Validate platform is in project requirements
+                        if platform in analyzed_req.platforms:
+                            efforts[platform] = int(hours)
+                        else:
+                            logger.warning(f"    Platform {platform_name} not in requirements for modified epic {epic_name}, skipping")
+                    except ValueError:
+                        logger.warning(f"    Unknown platform: {platform_name} in modified epic {epic_name}")
+                        continue
+                
+                if efforts:  # Only add task if it has valid efforts
+                    task = Task(
+                        description=task_description,
+                        efforts=efforts,
+                        source=epic_data.get("source_template", "Modified"),
+                        is_custom=False
+                    )
+                    tasks.append(task)
+            
+            # Create Epic object with preserved metadata
+            if tasks:  # Only add epic if it has tasks
+                modified_epic = Epic(
+                    name=epic_name,
+                    description=epic_data.get("description", ""),
+                    tasks=tasks,
+                    is_mandatory=epic_data.get("is_mandatory", False),
+                    source_template=epic_data.get("source_template", "Modified")
+                )
+                all_epics.append(modified_epic)
+                existing_epic_names.append(epic_name)
+                logger.info(f"  ✓ Modified: {epic_name} ({len(tasks)} tasks, mandatory={modified_epic.is_mandatory})")
+            else:
+                logger.warning(f"  - Skipped modified epic: {epic_name} (no valid tasks)")
+        
+        logger.info(f"✓ Added {len(mandatory_epics)} mandatory epics (unchanged) and {len(modified_epics_data)} retrieved epics (modified)")
+        
+        # Process CUSTOM epics (new ones)
         custom_epics_data = response.get("custom_epics", [])
-        logger.info(f"Generated {len(custom_epics_data)} custom epics with tasks")
+        logger.info(f"Received {len(custom_epics_data)} new custom epics")
         
         # Convert to Epic objects
         for epic_data in custom_epics_data:
             epic_name = epic_data.get("name", "")
             
-            # Check for duplicates
+            # Check for EXACT duplicates only (not semantic similarity)
             if epic_name in existing_epic_names:
                 logger.info(f"  - Skipped: {epic_name} (exact match)")
-                continue
-            
-            # Check for semantic similarity
-            is_duplicate = False
-            for existing_name in existing_epic_names:
-                if is_similar_epic_name(epic_name, existing_name):
-                    logger.info(f"  - Skipped: {epic_name} (similar to {existing_name})")
-                    is_duplicate = True
-                    break
-            
-            if is_duplicate:
                 continue
             
             # Create Task objects from tasks data
@@ -318,7 +476,17 @@ Return valid JSON only."""
             else:
                 logger.warning(f"  - Skipped: {epic_name} (no valid tasks)")
         
-        logger.info(f"✓ Total epics: {len(all_epics)} (mandatory: {len([e for e in all_epics if e.is_mandatory])}, retrieved: {len([e for e in all_epics if not e.is_mandatory and e.source_template != 'AI Generated'])}, generated: {len([e for e in all_epics if e.source_template == 'AI Generated'])})")
+        # Count mandatory (unchanged)
+        mandatory_count = len([e for e in all_epics if e.is_mandatory])
+        # Count modified retrieved epics (non-mandatory, non-AI-generated)
+        modified_retrieved_count = len([e for e in all_epics if not e.is_mandatory and e.source_template not in ['AI Generated']])
+        # Count new AI generated epics
+        new_generated_count = len([e for e in all_epics if e.source_template == 'AI Generated'])
+        
+        logger.info(f"✓ Total epics: {len(all_epics)}")
+        logger.info(f"  - Mandatory epics (unchanged): {mandatory_count}")
+        logger.info(f"  - Retrieved epics (modified): {modified_retrieved_count}")
+        logger.info(f"  - New custom epics (generated): {new_generated_count}")
         
         # Validate estimation quality
         validation_warnings = validate_estimation_quality(

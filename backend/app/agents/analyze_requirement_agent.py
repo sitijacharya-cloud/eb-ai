@@ -12,7 +12,7 @@ def analyze_requirement_node(state: Dict[str, Any]) -> Dict[str, Any]:
     """
     Analyze user requirements and extract structured information.
     
-    Extracts features, tech stack, platforms, epics, complexity level, usertypes,
+    Extracts features, tech stack, platforms, epics, user types,
     and special requirements from raw project description.
     """
     logger.info("=== Analyze Requirement Agent ===")
@@ -138,7 +138,7 @@ Return only valid JSON."""
             platforms=platforms,
             initial_epics=analysis_json.get("initial_epics", []),
             epic_categories=analysis_json.get("epic_categories", {}),
-            complexity=analysis_json.get("complexity", "medium"),
+
             user_types=analysis_json.get("user_types"),
             special_requirements=analysis_json.get("special_requirements")
         )

@@ -31,45 +31,74 @@ Project Requirement:
 
 Extract the following:
 
-1. Domain: Identify the primary business domain (ecommerce, fintech, healthcare, social_media, marketplace, education, logistics, etc.)
-- Choose ONE primary domain even if hybrid
-- Consider the core value proposition
+1. Domain: Identify the primary business domain
+- Use clear, descriptive domain names (e.g., ecommerce, fintech, healthcare, social_media, marketplace, education, logistics, hospitality, real_estate, entertainment, fitness, food_delivery, travel, automotive, etc.)
+- Choose ONE primary domain even if hybrid (e.g., "food_delivery" not "social_media + ecommerce")
+- Consider the core value proposition and primary user activity
+- If truly unique/custom, describe it clearly (e.g., "wedding_inspiration_platform")
 
-2. Features: Extract ALL features mentioned or logically required. 
+2. Features: Extract ALL features mentioned or logically required for this specific domain.
 
-**A. User Features:**
-- Account management (registration, login, profile)
-- Core user actions (search, browse, create, edit, delete)
-- User-specific functionality
+**DOMAIN-AGNOSTIC APPROACH:**
+Don't assume features - extract ONLY what's mentioned or clearly required for the stated domain.
+
+**A. Core User Features (Domain-Specific):**
+- Account/Profile management (registration, login, profile setup)
+- Primary user actions relevant to the domain (e.g., booking, ordering, posting, searching)
+- Content creation/consumption (if applicable)
+- Interaction features (comments, likes, shares, messaging)
+- Search and discovery mechanisms
+- User preferences and settings
 
 **B. Admin/Management Features:**
-- User management
-- Content/Data management
-- Analytics & reporting
-- System configuration
+- User management (view, edit, suspend, delete users)
+- Content/Data management (approve, reject, moderate)
+- Analytics & reporting dashboards
+- System configuration and settings
+- Role and permission management
 
-**C. Payment & Financial:**
+**C. Payment & Financial (if applicable):**
 - For EACH payment method mentioned: extract as separate feature
 - Example: "multiple payment options" → ["credit_card_payment", "debit_card_payment", "wallet_payment"]
-- Include: subscriptions, invoices, refunds, payout processing
+- Subscriptions, recurring billing, invoices
+- Refunds, disputes, payout processing
+- Transaction history and reporting
 
-**D. AI/ML Capabilities:**
+**D. AI/ML Capabilities (if mentioned):**
 - For EACH AI mention: extract specific capabilities
-- Example: "AI recommendations" → ["personalized_recommendations", "trend_analysis"]
-- Include: prediction models, automation, content generation, analytics
+- Recommendations, predictions, classifications
+- Content generation, automation
+- Pattern recognition, anomaly detection
+- Natural language processing
 
-**E. Technical & Infrastructure:**
-- Real-time features
-- Offline capabilities
-- Geolocation services
-- Push notifications
-- File/media handling
+**E. Technical & Infrastructure Features:**
+- Real-time features (live updates, WebSocket connections)
+- Offline capabilities (sync, cached data)
+- Geolocation services (GPS, location tracking, maps)
+- Push notifications and alerts
+- File/media handling (upload, storage, processing)
+- Multi-language support (i18n)
+- Accessibility features
 
-**F. Integrations & Third-party:**
-- APIs to integrate
-- External services
-- Social media integrations
-- Payment gateways (list each: Stripe, PayPal, etc.)
+**F. Integrations & Third-party Services:**
+- Payment gateways (list each: Stripe, PayPal, Razorpay, etc.)
+- Social media platforms (Facebook, Instagram, Twitter, etc.)
+- Email services (SendGrid, Mailchimp, etc.)
+- SMS/WhatsApp services
+- Cloud storage (AWS S3, Google Cloud, etc.)
+- Authentication providers (OAuth, SSO)
+- Analytics tools (Google Analytics, Mixpanel, etc.)
+- Domain-specific APIs or services
+
+**G. Common Infrastructure Features (Check if mentioned or implied):**
+- CMS Pages (Terms & Conditions, Privacy Policy, About Us, FAQ)
+- Onboarding flow (Splash screen, Tutorial, Welcome screens)
+- Help & Support (FAQs, Contact forms, In-app support)
+- Feedback & Ratings (User reviews, ratings, feedback forms)
+- Sharing functionality (Social sharing, referrals, invites)
+- Bookmarking/Favorites (Save items for later)
+- Activity history (User activity logs, view history)
+- Export/Import functionality (Data export, bulk operations)
 
 
 3. Tech Stack: Technologies mentioned or inferred from requirements
@@ -103,6 +132,10 @@ Extract the following:
    
    2. Is there an admin/management interface?
       - Yes → Add CMS
+      - Admin dashboard mentioned → Add CMS
+      - Content moderation mentioned → Add CMS
+      - User management mentioned → Add CMS
+      - Analytics/reporting for staff → Add CMS
       - No → Don't add CMS
    
    3. Add API (always needed for frontends)
@@ -161,23 +194,32 @@ Extract the following:
    - [ ] All features should appear in epic_categories values
    - [ ] Epic names are properly formatted (title case, with user type suffix if needed)
 
-7. Complexity: Rate as "simple", "medium", or "complex" based on:
-   - Number and sophistication of features
-   - Integration requirements
-   - Data complexity and scale
-   - Security and compliance needs
+7. User Types: Extract user roles/types if mentioned or clearly implied by the domain.
+   - Include ONLY if explicitly mentioned or domain clearly requires multiple user types
+   - Common patterns:
+     * Marketplace/E-commerce: Buyer, Seller, Vendor, Admin
+     * Healthcare: Patient, Doctor, Nurse, Admin
+     * Education: Student, Teacher, Parent, Admin
+     * Social/Dating: User, Moderator, Admin
+     * Service Booking: Customer, Service Provider, Admin
+     * Food Delivery: Customer, Restaurant, Delivery Partner, Admin
+     * Real Estate: Buyer, Seller, Agent, Admin
+   - Use clear, domain-appropriate role names
+   - Include "Admin" if any admin features mentioned
+   - Leave empty if system has only one general user type
 
-8. User Types: Extract user roles/types if mentioned (e.g., Buyer, Seller, Admin, Customer, Vendor, Guest,Teacher, Student, Photographer, Bride,Groom ,etc).
-   - include if explicitly mentioned or clearly implied by the domain
-   - Examples: E-commerce → Buyer, Seller; Dating → User, Moderator; Marketplace → Buyer, Seller, Vendor
-   - Use clear role names (Buyer, Seller, Admin, Customer, Vendor, Guest, Moderator)
-   - Leave empty if the system has only one general user type
-
-9. Special Requirements: Any unique technical needs like:
-   - Real-time features
-   - Payment integration, blockchain
-   - Compliance (GDPR, HIPAA, PCI-DSS)
-   - High availability, multi-tenancy
+8. Special Requirements: Identify unique technical needs that significantly impact architecture:
+   - **Real-time capabilities** (WebSocket, live updates, chat)
+   - **High-volume data processing** (big data, streaming)
+   - **Security & Compliance** (GDPR, HIPAA, PCI-DSS, SOC2)
+   - **Blockchain integration** (crypto payments, NFTs, smart contracts)
+   - **Complex workflows** (multi-step approvals, state machines)
+   - **Multi-tenancy** (SaaS with isolated customer data)
+   - **High availability** (99.9% uptime, disaster recovery)
+   - **Video/Audio processing** (streaming, transcoding, recording)
+   - **Geospatial features** (advanced mapping, routing, geofencing)
+   - **Machine learning** (model training, inference pipelines)
+   - **Third-party integrations** (list specific critical integrations)
 
 Return valid JSON in this format:
 {{
@@ -191,7 +233,6 @@ Return valid JSON in this format:
     "Feature 2 Epic Name": ["feature2"],
     "Feature 3 Epic Name": ["feature3"]
   }},
-  "complexity": "medium",
   "user_types": ["usertype1", "usertype2", "usertype3"],
   "special_requirements": ["requirement1"]
 }}
@@ -301,13 +342,13 @@ Efforts: {{"Flutter": 8, "API": 12}}  ← Only Flutter + API included!
 
 ### 2. Task Breakdown (HIGH-LEVEL, NOT GRANULAR)
 
-**Target: 3-8 tasks per epic (MAX 12 for very complex epics)**
+**Target: 5-10 tasks per epic (MIN 5, MAX 12 for very complex epics)**
 
 Each task should represent a COMPLETE, deliverable feature component that combines related work.
 
 **LEARN FROM RETRIEVED EPICS:**
 Study the retrieved/mandatory epics carefully - they show real-world task breakdowns:
-- How many tasks per epic? (Usually 3-8)
+- How many tasks per epic? (Usually 5-10)
 - What level of granularity? (High-level deliverables, not sub-tasks)
 - What are typical task descriptions? (Complete features, not technical steps)
 - What are realistic hour ranges? (Usually 4-32 hours per task)
@@ -315,7 +356,7 @@ Study the retrieved/mandatory epics carefully - they show real-world task breakd
 **IMPORTANT:** If you see a retrieved epic with 15+ tasks, it means:
 1. That epic covers a LARGE feature area
 2. You should create 2-3 SEPARATE epics to cover the same scope
-3. Each new epic should have 5-8 tasks (not copy all 15+ into one epic)
+3. Each new epic should have 6-10 tasks (not copy all 15+ into one epic)
 
 Example: If retrieved "Assignment Management" has 20 tasks →
 Create multiple epics: "Assignment Creation", "Assignment Grading", "Assignment Review"
@@ -323,19 +364,31 @@ Each with 6-8 focused tasks
 
 **REAL-WORLD EXAMPLES of proper task breakdown:**
 
-Epic: "Authentication" → 4-6 tasks
+Epic: "Authentication" → 5-8 tasks
 ✓ "Email/Mobile signup with validation"
 ✓ "Email/Mobile login with session management"
 ✓ "OTP verification with resend functionality"
 ✓ "Password reset and forgot password flow"
+✓ "Social login (Google/Apple ID) integration"
 ✓ "Manage app features based on user role"
 
-Epic: "My Profile" → 5-7 tasks
-✓ "View and update profile with pictures"
+Epic: "Notification" → 6-8 tasks
+✓ "Display in-app notification list"
+✓ "Manage read/unread status of notifications"
+✓ "Route users based on notification type"
+✓ "Set up push notifications"
+✓ "Handle receiving and sending push notifications"
+✓ "Send push notification from admin"
+
+Epic: "My Profile" → 7-9 tasks
+✓ "View profile"
+✓ "Update profile"
 ✓ "Settings (notification/privacy preferences)"
 ✓ "Update email and mobile number"
-✓ "Change password and logout"
+✓ "Change password"
+✓ "Logout"
 ✓ "Delete account"
+✓ "View/Update Preferences"
 
 Epic: "Payment Setup" → 4-5 tasks
 ✓ "Add, update, remove payment methods (card/bank)"
@@ -392,13 +445,20 @@ Your similar task should be: 14-20h per platform (not 8h!)
 
 **Platform effort patterns:**
 - Flutter: ~1x of Web App
-- API/Web Service: ~1.5-2x of frontend (more logic, testing, optimization)
+- **API/Web Service: ~1.5-2x of frontend** (more logic, testing, optimization, security)
 - CMS: ~0.6-0.8x of Web App (simpler admin interfaces)
 
-**Complexity Adjustments:**
-- Simple: ±10% (straightforward, minimal edge cases)
-- Medium: +10% to +20% (moderate complexity)
-- Complex: +30% to +60% (high complexity, many edge cases)
+**CRITICAL - Backend Hours:**
+Backend (API) tasks almost always need MORE hours than frontend:
+- **Simple CRUD API**: 1.5x frontend (if frontend is 6h, API should be 8-10h)
+- **Complex logic**: 2x frontend (if frontend is 12h, API should be 20-24h)
+- **Real-time/Chat**: 2-3x frontend (WebSocket complexity, message queuing)
+- **Role management**: 2x frontend (complex permissions, access control)
+- **Payment integration**: 1.5-2x frontend (security, webhooks, reconciliation)
+
+**Common Mistakes to Avoid:**
+✗ Frontend: 12h, API: 8h → WRONG (API should be higher)
+✓ Frontend: 12h, API: 16-20h → CORRECT
 
 **Special Requirements (add 20-80% each):**
 - Real-time features (WebSockets, live updates): +30-50%
@@ -450,23 +510,119 @@ For ANY domain, analyze the features list and create appropriate epics:
 - Break down complex features into manageable epics
 - Group related functionality together
 - Consider the full user journey from onboarding to advanced features
-- Include technical infrastructure needs (notifications, search, caching, etc.)
+- Include technical infrastructure needs
 
-**For AI/ML features (any domain):**
-- Create separate epics for each AI capability (Prediction, Recommendation, Detection, Analysis)
-- Include data preparation, model training, API integration tasks
-- Typical AI/ML epic: 40-80 hours API work (data prep, training, evaluation, integration)
+**Universal Epic Categories (adapt to domain):**
 
-**For payment features (any domain):**
-- Create separate epics for each payment method mentioned
-- Include setup, management, and transaction handling
-- Cover payment gateway integration complexities
+1. **User Management & Authentication**
+   - Registration, login, profile management
+   - Social login, password reset, email verification
+   - Role-based access control
 
-**For platform-specific features:**
-- Offline capabilities → Separate epic for offline sync and data caching
-- Localization → Separate epic for multi-language support
-- Location services → Separate epic for GPS, maps, geofencing
-- Real-time features → Separate epic for websockets, live updates
+2. **Core Domain Features**
+   - Primary business logic specific to the domain
+   - Break into multiple epics based on feature complexity
+   - Each major feature area = 1-2 epics
+
+3. **Search & Discovery**
+   - Search functionality with filters
+   - Advanced search, saved searches
+   - Recommendations, trending items
+
+4. **Content Management**
+   - Create, read, update, delete operations
+   - Media uploads, content organization
+   - Content moderation (if applicable)
+
+5. **Interactions & Engagement**
+   - Comments, likes, shares, ratings
+   - Bookmarks, favorites, wishlists
+   - Follow/unfollow, connections
+
+6. **Notifications & Communications**
+   - Push notifications, email notifications
+   - In-app notifications, SMS alerts
+   - Real-time chat (if applicable)
+
+7. **Payments & Transactions** (if applicable)
+   - Payment gateway integration
+   - Subscription management
+   - Transaction history, invoices, refunds
+
+8. **Location Features** (if applicable)
+   - Location services, GPS tracking
+   - Map integration, directions
+   - Geofencing, location-based search
+
+9. **Analytics & Reporting**
+   - User analytics, engagement metrics
+   - Business reports, dashboard
+   - Export capabilities
+
+10. **Admin & Configuration**
+    - Admin dashboard
+    - User management, content moderation
+    - System settings, CMS pages
+
+11. **Infrastructure & System**
+    - Onboarding flow
+    - Settings and preferences
+    - Help & support
+
+**SPECIALIZED SYSTEMS (Create Multiple Epics When Applicable):**
+
+When you see these features in ANY domain, create MULTIPLE epics, not just one:
+
+1. **Messaging/Chat System → 2-3 epics:**
+   - "[Feature Name] - Chat Integration" (setup, authentication, sending/receiving)
+   - "[Feature Name] - Chat History" (list, continue, remove, archive)
+   - "Chat Notifications" (push notifications, webhooks) [if separate from main notifications]
+
+2. **Payment/Subscription System → 3-4 epics:**
+   - "Payment Gateway Integration" (Stripe, PayPal, etc. setup)
+   - "Subscription Management" (plans, upgrade/downgrade, cancel)
+   - "Transaction Management" (history, details, filter, download, refunds)
+   - "In-App Purchases" (mobile-specific) [if applicable]
+
+3. **Location/Map System → 2-3 epics:**
+   - "Location Services" (GPS, permissions, tracking, geofencing)
+   - "Map Integration" (Maps SDK, markers, clustering, directions)
+   - "Location-Based Search" (geospatial queries, radius search) [if complex]
+
+4. **Admin System → 3-5 epics:**
+   - "Admin Dashboard" (overview, statistics, quick actions)
+   - "Admin User Management" (admin roles, permissions, team management)
+   - "User Management - Admin" (manage app users, view, edit, suspend)
+   - "Content Moderation - Admin" (review reports, approve/reject, remove content)
+   - "System Configuration - Admin" (settings, CMS pages, email templates)
+
+5. **Multi-User-Type Profiles → 2-3 epics per user type:**
+   - "Profile Creation - [UserType]" (setup, onboarding, verification)
+   - "Profile Management - [UserType]" (view, edit, settings, preferences)
+   - "[UserType] Analytics" (engagement stats, performance reports) [if applicable]
+
+6. **Content/Media Management → 2-3 epics:**
+   - "[Content Type] Creation" (create, upload, draft)
+   - "[Content Type] Management" (edit, organize, categorize, delete)
+   - "[Content Type] Discovery" (browse, search, filter, recommendations)
+
+7. **Booking/Reservation System → 3-4 epics:**
+   - "Booking Creation" (search availability, select, book)
+   - "Booking Management" (view, modify, cancel)
+   - "Calendar/Availability Management" (for providers)
+   - "Booking Notifications & Reminders" (confirmations, reminders)
+
+8. **Order/Transaction Flow → 3-4 epics:**
+   - "Cart/Basket Management" (add, update, remove items)
+   - "Checkout Process" (address, payment, confirmation)
+   - "Order Management" (view orders, track status, history)
+   - "Order Fulfillment" (for sellers/vendors/providers)
+
+**Pattern Recognition:**
+- If a feature has **create + view + edit + delete + share** → Split into 2 epics (Management + Sharing)
+- If a feature has **user side + provider side** → Create separate epics per user type
+- If a feature has **core functionality + analytics** → Create separate epics
+- If a feature has **setup + ongoing management** → Consider 2 epics
 
 ### 6. Epic Naming Convention with User Types
 
@@ -474,54 +630,32 @@ For ANY domain, analyze the features list and create appropriate epics:
 
 **User Types Available: {user_types}**
 
-**Naming Rules:**
-1. **Generic epics** (for all users): Use plain name
-   Examples: "Authentication", "Database Design", "Notification", "Payment Integration"
+**Naming Rules (Universal across all domains):**
+
+1. **Generic epics** (used by all users or system-wide): Use plain name
+   Examples: "Authentication", "Database Design", "Notification", "Search Functionality"
    
 2. **User-specific epics** (for specific user type): Add "- UserType" suffix
-   Examples: "Profile Management - Customer", "Dashboard - Admin", "Content Creation - Creator"
+   Examples: 
+   - E-commerce: "Order Management - Buyer", "Inventory Management - Seller"
+   - Healthcare: "Appointment Booking - Patient", "Medical Records - Doctor"
+   - Education: "Assignment Submission - Student", "Grading System - Teacher"
+   - General: "Profile Management - [UserType]", "Dashboard - [UserType]"
    
 3. **Multiple user types for same epic**: Use "/" separator
-   Examples: "Messaging - Buyer/Seller", "Reviews - Customer/Vendor"
+   Examples: "Messaging - Buyer/Seller", "Reviews - Customer/Provider"
 
-**General Examples (applicable to any domain):**
-
-**Single User Type Project:**
-- "User Profile - Customer"
-- "Dashboard - Admin"
-- "Settings - User"
-
-**Multi User Type Project:**
-- "Profile Management - Buyer"
-- "Profile Management - Seller"
-- "Order Tracking - Customer"
-- "Inventory Management - Vendor"
-- "Analytics Dashboard - Admin"
-
-**Complex Multi User Type Project:**
-- "Content Upload - Creator"
-- "Content Discovery - Viewer"
-- "Moderation Tools - Moderator"
-- "Payment Management - Creator"
-- "Subscription Management - Viewer"
-- "Platform Analytics - Admin"
+**Decision Logic (Domain-Agnostic):**
+- If ALL user types use the feature → Generic name (e.g., "Authentication")
+- If SPECIFIC user types use the feature → Add user type (e.g., "Dashboard - Admin")
+- If feature has different implementations per user type → Create separate epics per type
+- For admin features → Always add "- Admin" suffix
 
 **WHY This Matters:**
 - Clear ownership: Shows which user type can access/use the feature
 - Better organization: Groups features by user journey
-- Accurate effort estimation: Different user types may have different complexity
+- Accurate effort estimation: Different user types may have different requirements
 - Improved retrieval: Helps match similar user-specific features from knowledge base
-
-**Decision Logic:**
-- If ALL user types use the feature → Generic name (e.g., "Authentication")
-- If SPECIFIC user types use the feature → Add user type (e.g., "Order Management - Seller")
-- If feature has different implementations per user type → Create separate epics per type
-- Allocate significant backend hours (40-80h per AI epic)
-
-**For payment-heavy domains (e-commerce, utilities, fintech):**
-- Create separate epics for each payment method
-- Include setup, management, and transaction handling
-- Cover payment gateway integration complexities
 
 ---
 
@@ -543,10 +677,10 @@ Return JSON with custom epics array. **Generate 15-25 custom epics** to cover al
 - "User management" mentioned → Create 2-3 epics: User Registration & Auth, Profile Management, Settings & Preferences
 - "Admin dashboard" mentioned → Create 2-4 epics: Admin Dashboard, User Management - Admin, Analytics & Reporting - Admin, System Configuration - Admin
 
-**Epic Count Guidelines by Project Complexity:**
-- Simple project (10-20 features): 15-20 epics
+**Epic Count Guidelines by Feature Count:**
+- Small project (10-20 features): 15-20 epics
 - Medium project (20-40 features): 25-35 epics
-- Complex project (40+ features): 35-50 epics
+- Large project (40+ features): 35-50 epics
 
 **IMPORTANT:** Study the features list carefully and ensure you create epics for:
 - Each payment method mentioned (cards, bank, PayPal, Apple Pay, Google Pay)
@@ -609,20 +743,23 @@ Before returning JSON, verify EVERY task:
 **Your output MUST be filtered to target platforms!**
 
 ## Validation Checklist:
-- [ ] 3-8 HIGH-LEVEL tasks per epic (not 15+ granular sub-tasks)
+- [ ] 5-10 HIGH-LEVEL tasks per epic (not 15+ granular sub-tasks)
 - [ ] If retrieved epic has 15+ tasks, split into multiple epics (don't copy all into one)
 - [ ] Each task is a complete deliverable component
 - [ ] No duplicate/similar epic names
 - [ ] All epics match project domain and features
 - [ ] **CRITICAL: Only platforms from {platforms} included** ← VERIFY THIS!
 - [ ] **CRITICAL: No platforms outside {platforms}** ← DOUBLE CHECK!
+- [ ] **CRITICAL: Backend (API) hours are 1.5-2x frontend** ← VERIFY THIS!
 - [ ] Effort estimates LEARNED from retrieved epics (don't go lower without reason)
 - [ ] Hours are CONSERVATIVE (6-40h range per task, minimum 6h)
 - [ ] AI/ML tasks have 40-80h backend minimum
 - [ ] Complex integrations have 20-40h minimum
 - [ ] Backend tasks have appropriate hours (typically 1.5-2x frontend)
-- [ ] Task descriptions combine related work (not split into sub-tasks)
+- [ ] Task descriptions are detailed (not just "Create", "Update", "Delete")
+- [ ] Task descriptions separate UI work from API work from CMS work
 - [ ] Generated 20-30 custom epics (not just 10-15)
+- [ ] Specialized systems broken into multiple epics (chat, subscription, location, admin)
 
 **COVERAGE CHECKLIST** - Ensure these are addressed if mentioned in requirements:
 - [ ] Payment methods (each type needs separate epic if mentioned)

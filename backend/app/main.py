@@ -1,9 +1,9 @@
 """FastAPI application for EB Estimation Agent."""
 
-from fastapi import FastAPI, HTTPException
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import logging
-import warnings
 
 from .api import router
 from .core.config import settings
@@ -16,11 +16,45 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Handle application startup/shutdown lifecycle."""
+    logger.info(f"Starting {settings.api_title} v{settings.api_version}")
+    logger.info(f"OpenAI Model: {settings.openai_model}")
+    logger.info("Using MySQL for vector embeddings")
+
+    # Check MySQL knowledge base stats
+    try:
+        from .services.mysql_knowledge_base import get_knowledge_base
+        kb = get_knowledge_base()
+
+        stats = kb.get_stats()
+        logger.info(
+            f"✓ MySQL Knowledge Base: {stats['total_epics']} epics from "
+            f"{stats['total_templates']} templates"
+        )
+        logger.info(
+            f"✓ Templates: {', '.join(stats['templates'][:5])}"
+            f"{'...' if len(stats['templates']) > 5 else ''}"
+        )
+    except Exception as e:
+        logger.error(f"MySQL Knowledge Base check failed: {e}")
+        logger.warning(
+            "Templates may need to be loaded. "
+            "Run: python -m backend.app.services.mysql_knowledge_base init"
+        )
+
+    yield
+
+    logger.info("Shutting down application...")
+
+
 # Create FastAPI app
 app = FastAPI(
     title=settings.api_title,
     version=settings.api_version,
-    description="AI-powered project estimation system using LangGraph and GPT-4"
+    description="AI-powered project estimation system using LangGraph and GPT-4o-mini",
+    lifespan=lifespan,
 )
 
 # Add CORS middleware
@@ -50,32 +84,6 @@ async def root():
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy"}
-
-
-@app.on_event("startup")
-async def startup_event():
-    """Run on application startup."""
-    logger.info(f"Starting {settings.api_title} v{settings.api_version}")
-    logger.info(f"OpenAI Model: {settings.openai_model}")
-    logger.info("Using MySQL for vector embeddings")
-    
-    # Check MySQL knowledge base stats
-    try:
-        from .services.mysql_knowledge_base import get_knowledge_base
-        kb = get_knowledge_base()
-        
-        stats = kb.get_stats()
-        logger.info(f"✓ MySQL Knowledge Base: {stats['total_epics']} epics from {stats['total_templates']} templates")
-        logger.info(f"✓ Templates: {', '.join(stats['templates'][:5])}{'...' if len(stats['templates']) > 5 else ''}")
-    except Exception as e:
-        logger.error(f"MySQL Knowledge Base check failed: {e}")
-        logger.warning("Templates may need to be loaded. Run: python -m backend.app.services.mysql_knowledge_base init")
-
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    """Run on application shutdown."""
-    logger.info("Shutting down application...")
 
 
 if __name__ == "__main__":
